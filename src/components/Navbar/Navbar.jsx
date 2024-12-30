@@ -40,12 +40,12 @@ const Navbar = () => {
 
         {/* Desktop Menu Items */}
         <div className="hidden md:flex font-semibold items-center space-x-7 text-sm tracking-wide">
-          <Link to="/email" className="hover:text-gray-600">About Us</Link>
+          {/* <Link to="/email" className="hover:text-gray-600">About Us</Link>
           <Link to="/marketing" className="hover:text-gray-600">At a Glance</Link>
           <Link to="/pricing" className="hover:text-gray-600">Advantages</Link>
           <Link to="/#partners" className="hover:text-gray-600">Steps</Link>
           <Link to="/manPower" className="hover:text-gray-600">Our Story</Link>
-          <Link to="/manPower" className="hover:text-gray-600">Our Markets</Link>
+          <Link to="/manPower" className="hover:text-gray-600">Our Markets</Link> */}
 
           {/* Search Section */}
    
