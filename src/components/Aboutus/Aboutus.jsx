@@ -6,13 +6,13 @@ const Aboutus = () => {
       <div className="w-full lg:w-1/2">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">About Saffary</h1>
         <p className="text-lg text-gray-700 mb-4">
-          Saffary is one of India's leading FoodTech Platform for Hyperlocal Market.
+          Saffary is one of Bahrain's leading FoodTech Platform for Hyperlocal Market.
         </p>
         <p className="text-lg text-gray-700 mb-4">
           Saffary is an innovative solution for anyone who wants to have tea, coffee & instant bites/meals from nearby merchants. Through Saffary App anyone can access a list of items provided by nearby merchants who have partnered with Saffary and can easily place an order with 3 simple steps.
         </p>
         <p className="text-lg text-gray-700 mb-4">
-          Our concept has been validated, and we are already generating significant traction at our pilot site, which is a business park in the suburbs of Mumbai. Our aim is to expand this model to all such places in India.
+          Our concept has been validated, and we are already generating significant traction at our pilot site, which is a business park in the suburbs of Mumbai. Our aim is to expand this model to all such places in Bahrain.
         </p>
       </div>
       <div className="w-full lg:w-1/2">

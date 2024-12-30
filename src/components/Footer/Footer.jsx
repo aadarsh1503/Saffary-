@@ -12,7 +12,7 @@ const Footer = () => {
             <img src={g1} alt="Logo" className="h-20" />
           </div>
           <p className="text-gray-700 text-lg mb-6">
-            Saffary is one of India's leading<br /> FoodTech Platform for Hyperlocal Market.
+            Saffary is one of Bahrain's leading<br /> FoodTech Platform for Hyperlocal Market.
           </p>
           <div className="flex flex-col  space-y-4">
             <button className="border border-gray-700 text-gray-700 py-2 px-3 rounded-md hover:bg-gray-100">
