@@ -61,7 +61,7 @@ const Footer = () => {
       {/* Bottom Section */}
       <div className="border-t border-gray-300 mt-8 pt-4 text-center">
         <p className="text-gray-600 text-sm">
-          Copyright © 2024 Saffary. All rights reserved.
+          Copyright © 2025 Saffary. All rights reserved.
         </p>
       </div>
     </footer>

@@ -2,7 +2,7 @@ import React from 'react';
 import g1 from "./g1.png"
 const Aboutus = () => {
   return (
-    <section className="flex items-center mt-20 max-w-7xl mx-auto justify-between py-20 px-6 ">
+    <section className="flex items-center mt-2 max-w-7xl mx-auto justify-between py-20 px-6 ">
       <div className="w-full lg:w-1/2">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">About Saffary</h1>
         <p className="text-lg text-gray-700 mb-4">
