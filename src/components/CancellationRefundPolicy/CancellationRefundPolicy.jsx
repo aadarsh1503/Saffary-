@@ -2,7 +2,7 @@ import React from 'react';
 
 const CancellationRefundPolicy = () => {
   return (
-    <div className="container mx-auto p-4 mt-0 lg:mt-24">
+    <div className="container mx-auto p-4 mt-24 lg:mt-24">
       {/* Heading */}
      
       

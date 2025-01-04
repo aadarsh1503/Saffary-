@@ -26,7 +26,7 @@ const BecomeMerchantForm = () => {
   };
 
   return (
-    <div className="bg-white py-12 px-6 mt-0 lg:mt-20 lg:px-24">
+    <div className="bg-white py-12 px-6 mt-20 lg:mt-20 lg:px-24">
       <h2 className="text-2xl font-bold text-center mb-8">Become A Merchant</h2>
       <form
         className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6"

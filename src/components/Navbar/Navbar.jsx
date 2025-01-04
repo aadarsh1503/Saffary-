@@ -103,23 +103,23 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-lorange text-white py-4 px-6">
             {/* Mobile Menu Items */}
-            <a href="#about" className="block py-2 hover:text-gray-400">
+            <a href="/#about" className="block py-2 hover:text-gray-400">
               About Us
             </a>
-            <a href="#glance" className="block py-2 hover:text-gray-400">
+            <a href="/#glance" className="block py-2 hover:text-gray-400">
               At a Glance
             </a>
-            <a href="#advantages" className="block py-2 hover:text-gray-400">
+            <a href="/#advantages" className="block py-2 hover:text-gray-400">
               Advantages
             </a>
-            <a href="#steps" className="block py-2 hover:text-gray-400">
+            <a href="/#steps" className="block py-2 hover:text-gray-400">
               Steps
             </a>
-            <a href="#story" className="block py-2 hover:text-gray-400">
+            <a href="/#story" className="block py-2 hover:text-gray-400">
               Our Story
             </a>
             {/* Additional Items */}
-            <a href="#contact" className="block py-2 hover:text-gray-400">
+            <a href="/#contact" className="block py-2 hover:text-gray-400">
               Contact Us
             </a>
             <a href="/requestEarly" className="block py-2 hover:text-gray-400">

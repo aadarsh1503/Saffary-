@@ -19,7 +19,7 @@ const RequestEarlyAccess = () => {
   };
 
   return (
-    <section className="bg-white mt-0 lg:mt-20 py-12">
+    <section className="bg-white mt-20 lg:mt-20 py-12">
       <div className="container mx-auto px-6 md:px-12">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">
           Request Early Access
