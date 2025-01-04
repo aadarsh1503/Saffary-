@@ -73,14 +73,14 @@ const HowItWorks = () => {
       </div>
 
       {/* Right Side */}
-      <div className="w-full lg:w-2/5 lg:ml-0 ml-24 flex flex-col items-center mt-8 justify-center bg-white lg:bg-gray-100 rounded-lg lg:shadow-md p-6">
+      <div className=" lg:w-2/5 w-full lg:ml-0 flex flex-col items-center mt-8 justify-center bg-white lg:bg-gray-100 rounded-lg lg:shadow-md p-6">
       <h1 className=' text-7xl text-white lg:text-gray-100'>hiii</h1>
         <img
           src={activeStep.image}
           alt={activeStep.title}
-          className="w-96 h-96 -ml-44 -mt-16 object-contain transition-transform duration-300 ease-in-out"
+          className="lg:w-96 lg:h-96 -ml-3 h-[200px] lg:-ml-44 -mt-32 lg:-mt-16 object-contain transition-transform duration-300 ease-in-out"
         />
-        <div className="-mt-10 -ml-56 bg-white p-4 rounded-lg shadow-md w-full">
+        <div className="-mt-10  lg:-ml-56 bg-white p-4 rounded-lg shadow-md w-full">
           <h3 className="text-xl font-bold mb-2">{activeStep.title}</h3>
           <p className="text-gray-600 text-lg">{activeStep.description}</p>
         </div>

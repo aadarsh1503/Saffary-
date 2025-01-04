@@ -20,7 +20,7 @@ const OurMarkets = () => {
           <img
             src={i1}
             alt="Our Markets Map"
-            className="w-[500px] max-w-2xl h-[500px] rounded-lg shadow-md"
+            className="w-[200px] lg:w-[500px] max-w-2xl h-[200px] lg:h-[500px] rounded-lg shadow-md"
           />
         </div>
       </div>
