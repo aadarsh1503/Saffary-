@@ -23,26 +23,26 @@ const RealTimeStats = () => {
       <div className="bg-lorange text-white mt-20 p-12 rounded-lg sm:w-3/3 w-full">
       
       
-        <h2 className="text-3xl font-bold mb-4">Real Time Stats</h2>
+        <h2 className="lg:text-3xl text-2xl font-bold mb-4">Real Time Stats</h2>
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
           <div className="text-center">
-            <p className="text-4xl font-bold">52</p>
+            <p className="lg:text-4xl text-xl font-bold">52</p>
             <p className="text-lg font-bold">Merchant Count</p>
           </div>
           <div className="text-center">
-            <p className="text-4xl font-bold">2841</p>
+            <p className="lg:text-4xl text-xl font-bold">2841</p>
             <p className="text-lg font-bold">Customer Count</p>
           </div>
           <div className="text-center">
-            <p className="text-4xl font-bold">45450</p>
+            <p className="lg:text-4xl text-xl font-bold">45450</p>
             <p className="text-lg font-bold">Orders</p>
           </div>
           <div className="text-center">
-            <p className="text-4xl font-bold">30</p>
+            <p className="lg:text-4xl text-xl font-bold">30</p>
             <p className="text-lg font-bold">Locality</p>
           </div>
           <div className="text-center">
-            <p className="text-4xl font-bold">339</p>
+            <p className="lg:text-4xl text-xl font-bold">339</p>
             <p className="text-lg font-bold">Khata Users</p>
           </div>
         </div>

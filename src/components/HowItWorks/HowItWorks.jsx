@@ -39,8 +39,8 @@ const HowItWorks = () => {
     },
     {
       id: 6,
-      title: "Digital Khata",
-      description: "Under the Khata section, you can see month-wise pending dues from your merchants and track the status of payments.",
+      title: "Digital Account",
+      description: "Under the Account section, you can see month-wise pending dues from your merchants and track the status of payments.",
       image: i6,
     },
   ];
@@ -73,8 +73,8 @@ const HowItWorks = () => {
       </div>
 
       {/* Right Side */}
-      <div className="w-full sm:w-2/5 flex flex-col items-center mt-8 justify-center bg-gray-100 rounded-lg shadow-md p-6">
-      <h1 className=' text-7xl text-gray-100'>hiii</h1>
+      <div className="w-full lg:w-2/5 lg:ml-0 ml-24 flex flex-col items-center mt-8 justify-center bg-white lg:bg-gray-100 rounded-lg lg:shadow-md p-6">
+      <h1 className=' text-7xl text-white lg:text-gray-100'>hiii</h1>
         <img
           src={activeStep.image}
           alt={activeStep.title}

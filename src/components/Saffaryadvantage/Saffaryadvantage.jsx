@@ -27,8 +27,19 @@ const Saffaryadvantage = () => {
             <div className="text-right">
               <h3 className="text-xl font-bold mb-2">No Commission</h3>
               <p className="text-sm text-gray-600">
-                We don’t charge any commission <br />from merchants, so you get the<br />
-                same price mentioned on their<br /> menu card.
+                We don’t charge any commission
+                <span className="hidden lg:block">
+                 
+                </span>
+                from merchants, so you get the
+                <span className="hidden lg:block">
+                 
+                </span>
+                same price mentioned on their
+                <span className="hidden lg:block">
+                 
+                </span>
+                menu card.
               </p>
             </div>
             <img
@@ -38,15 +49,14 @@ const Saffaryadvantage = () => {
             />
           </div>
           <div className="flex items-center justify-end space-x-4">
+            <div className="text-right">
+              <h3 className="text-xl font-bold mb-2">Easy Access to Menu</h3>
+              <p className="text-sm text-gray-600">
+                No more calls asking “What’s on the menu?”. Access the
 
-          <div className="text-right">
-  <h3 className="text-xl font-bold mb-2">Easy Access to Menu</h3>
-  <p className="text-sm text-gray-600">
-    No more calls asking “What’s on the menu?”. Access the
-    complete menu & place your order with a single click, whether it's your favorite Shawarma or Machboos!
-  </p>
-</div>
-
+                complete menu & place your order with a single click, whether it's your favorite Shawarma or Machboos!
+              </p>
+            </div>
             <img
               src="https://www.ordercoro.com/assets/many.svg"
               alt="Eat Now & Pay Later"
@@ -66,17 +76,24 @@ const Saffaryadvantage = () => {
 
         {/* Right Items */}
         <div className="flex flex-col space-y-8">
-        <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4">
             <img
               src="https://www.ordercoro.com/assets/Advantage4_coro.png"
               alt="Easy Access to Menu"
               className="w-20 h-20"
             />
-                       <div className="text-left">
+            <div className="text-left">
               <h3 className="text-xl font-bold mb-2">Eat Now & Pay Later</h3>
               <p className="text-sm text-gray-600">
-                We have also enabled digital khata<br /> in this app so one can clear
-                their<br /> dues on a monthly basis.
+                We have also enabled digital khata
+                <span className="hidden lg:block">
+                  
+                </span>
+                in this app so one can clear
+                <span className="hidden lg:block">
+                  
+                </span>
+                their dues on a monthly basis.
               </p>
             </div>
           </div>
@@ -89,9 +106,19 @@ const Saffaryadvantage = () => {
             <div className="text-left">
               <h3 className="text-xl font-bold mb-2">Quick Delivery</h3>
               <p className="text-sm text-gray-600">
-                Since merchants are located nearby,<br /> you don’t have to wait more
-                for<br /> delivery. Take-away, Dining &<br /> Delivery options are also
-                available.
+                Since merchants are located nearby,
+                <span className="hidden lg:block">
+                  
+                </span>
+                you don’t have to wait more
+                <span className="hidden lg:block">
+                  
+                </span>
+                for delivery. Take-away, Dining &
+                <span className="hidden lg:block">
+                  
+                </span>
+                Delivery options are also available.
               </p>
             </div>
           </div>
@@ -105,8 +132,19 @@ const Saffaryadvantage = () => {
             <div className="text-left">
               <h3 className="text-xl font-bold mb-2">Explore</h3>
               <p className="text-sm text-gray-600">
-                All important updates related to<br /> your business park or nearby
-                area<br /> are published under the “Explore”<br /> section on a daily basis.
+                All important updates related to
+                <span className="hidden lg:block">
+                  
+                </span>
+                your business park or nearby
+                <span className="hidden lg:block">
+                  
+                </span>
+                area are published under the “Explore”
+                <span className="hidden lg:block">
+                  
+                </span>
+                section on a daily basis.
               </p>
             </div>
           </div>

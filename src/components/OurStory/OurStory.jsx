@@ -53,43 +53,50 @@ const OurStory = () => {
 
   return (
     <div id="story" className="bg-orange-500 text-white py-10 px-4">
-        <h1 className=' text-7xl text-orange-500'>hiii</h1>
+      <h1 className="text-7xl text-orange-500">hiii</h1>
 
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-8">Our Story</h2>
-        <div className="flex -ml-24 items-center">
-          {/* Previous Button */}
-          <button
-            className="text-2xl p-2 bg-white  text-orange-500 rounded-full hover:bg-orange-400 hover:text-white transition"
-            onClick={handlePrev}
-          >
-            <AiOutlineArrowLeft />
-          </button>
-
-          {/* Story Cards */}
-          <div className="flex space-x-4 flex-1 mx-4">
-            {visibleCards.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white text-orange-500 rounded-lg p-6 shadow-lg  h-[300px] w-[350px]" // Fixed height and width
-              >
-                <div className="flex items-center space-x-2 mb-4">
-                  <span className="bg-gray-200 text-gray-800 py-1 px-3 rounded-full text-sm">
-                    • {item.date}
-                  </span>
-                </div>
-                <p className="text-gray-800">{item.content}</p>
-              </div>
-            ))}
+        <div className="flex flex-col ml-0 lg:-ml-20 sm:flex-row items-center justify-between">
+          {/* Previous Button (Hidden on Mobile) */}
+          <div className="hidden sm:block">
+            <button
+              className="text-2xl p-2 bg-white text-orange-500 rounded-full hover:bg-orange-400 hover:text-white transition"
+              onClick={handlePrev}
+            >
+              <AiOutlineArrowLeft />
+            </button>
           </div>
 
-          {/* Next Button */}
-          <button
-            className="text-2xl p-2 bg-white text-orange-500 rounded-full hover:bg-orange-400 hover:text-white transition"
-            onClick={handleNext}
-          >
-            <AiOutlineArrowRight />
-          </button>
+          {/* Story Cards */}
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0 mx-4">
+            {/* Show all cards on mobile */}
+            {(window.innerWidth <= 640 ? data : visibleCards).map(
+              (item, index) => (
+                <div
+                  key={index}
+                  className="bg-white text-orange-500 rounded-lg  shadow-lg lg:w-[350px] lg:h-[300px] lg:p-4 p-3 sm:w-[450px] h-[400px]"
+                >
+                  <div className="flex items-center space-x-2 mb-4">
+                    <span className="bg-gray-200 text-gray-800 py-1 px-3 rounded-full text-sm">
+                      • {item.date}
+                    </span>
+                  </div>
+                  <p className="text-gray-800">{item.content}</p>
+                </div>
+              )
+            )}
+          </div>
+
+          {/* Next Button (Hidden on Mobile) */}
+          <div className="hidden sm:block">
+            <button
+              className="text-2xl p-2 bg-white text-orange-500 rounded-full hover:bg-orange-400 hover:text-white transition"
+              onClick={handleNext}
+            >
+              <AiOutlineArrowRight />
+            </button>
+          </div>
         </div>
       </div>
     </div>

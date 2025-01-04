@@ -10,19 +10,19 @@ const Footer = () => {
         {/* Left Section */}
         <div className="mb-8 -ml-8 md:mb-0">
           {/* Logo */}
-          <div className="mb-4">
+          <div className="mb-4 ml-9 lg:ml-0">
             <img src={g1} alt="Logo" className="h-20" />
           </div>
-          <p className="text-gray-700 text-lg mb-6">
+          <p className="text-gray-700 text-lg lg:ml-0 ml-9 mb-6">
             Saffary is one of Bahrain's leading<br /> FoodTech Platform for Hyperlocal Market.
           </p>
           <div className="flex flex-col space-y-4">
             <Link to="/becomeMerchant"> 
-              <button className="border border-gray-700 text-gray-700 py-2 px-32 rounded-md hover:bg-gray-100">
+              <button className="border border-gray-700 ml-9 lg:ml-0 text-gray-700 py-2 px-20 lg:px-32 rounded-md hover:bg-gray-100">
                 Become a merchant
               </button>
             </Link>
-            <button className="border border-gray-700 text-gray-700 py-2 px-3 rounded-md hover:bg-gray-100">
+            <button className="border border-gray-700 lg:ml-0 ml-9 text-gray-700 py-2 px-3 rounded-md hover:bg-gray-100">
               Request a Demo
             </button>
           </div>
@@ -68,7 +68,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="grid grid-cols-2 ml-32 gap-4 mt-6">
+          <div className="grid grid-cols-2 ml-0 lg:ml-32 gap-4 mt-6">
             <AiOutlineLinkedin className="text-orange-500 text-5xl cursor-pointer hover:text-orange-600" />
             <AiOutlineTwitter className="text-orange-500 text-5xl cursor-pointer hover:text-orange-600" />
             <AiOutlineInstagram className="text-orange-500 text-5xl cursor-pointer hover:text-orange-600" />
