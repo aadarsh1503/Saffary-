@@ -2,9 +2,11 @@ import React from 'react';
 import g1 from "./g1.jpeg"
 function AppPromotion() {
   return (
-    <div className="bg-lorange text-white mb-10 rounded-2xl   max-w-5xl mx-auto flex justify-between items-center px-6 md:px-20">
+    <div id='markets' className="bg-lorange text-white mb-10 rounded-2xl   max-w-4xl mx-auto flex justify-between items-center px-6 md:px-20">
       {/* Left Side Content */}
+
       <div className="space-y-4">
+        
       <img src={g1} alt="Saffary" className='h-20 ml-12 w-[200px]' />
 
         <button className="bg-white text-lorange text-lg font-bold ml-16 py-2 px-6 rounded-md shadow-md hover:bg-gray-100 transition">

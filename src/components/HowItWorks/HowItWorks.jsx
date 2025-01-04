@@ -48,9 +48,11 @@ const HowItWorks = () => {
   const [activeStep, setActiveStep] = useState(steps[0]);
 
   return (
-    <div className="flex flex-col sm:flex-row items-start min-h-screen justify-between w-full bg-white">
+    <div id="steps" className="flex flex-col sm:flex-row items-start min-h-screen justify-between w-full bg-white">
       {/* Left Side */}
+      
       <div className="w-full sm:w-1/2 p-6 sm:ml-32">
+      <h1 className=' text-7xl text-white'>hiii</h1>
         <h2 className="text-4xl font-bold mb-6">How does it work?!</h2>
         <ul className="space-y-8">
           {steps.map((step) => (
@@ -71,7 +73,8 @@ const HowItWorks = () => {
       </div>
 
       {/* Right Side */}
-      <div className="w-full sm:w-2/5 flex flex-col items-center  justify-center bg-gray-100 rounded-lg shadow-md p-6">
+      <div className="w-full sm:w-2/5 flex flex-col items-center mt-8 justify-center bg-gray-100 rounded-lg shadow-md p-6">
+      <h1 className=' text-7xl text-gray-100'>hiii</h1>
         <img
           src={activeStep.image}
           alt={activeStep.title}

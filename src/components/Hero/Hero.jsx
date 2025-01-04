@@ -2,15 +2,23 @@ import React, { useEffect, useState } from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAppStore, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
+import Aboutus from "../Aboutus/Aboutus";
+import RealTimeStats from "../RealTimeStats/RealTimeStats";
+import Saffaryadvantage from "../Saffaryadvantage/Saffaryadvantage";
+import HowItWorks from "../HowItWorks/HowItWorks";
+import OurStory from "../OurStory/OurStory";
+import OurMarkets from "../OurMarkets/OurMarkets";
+import AppPromotion from "../AppPromotion/AppPromotion";
 
 const Hero = () => {
   const headings = [
-    "Want to have Sev Puri but have no time?",
-    "Craving for Pizza but can't go out?",
-    "Need groceries delivered to your door?",
-    "Thinking of having homemade snacks?",
-    "Want fresh fruits without stepping out?",
+    "Craving Bahraini Machboos but no time to cook?",
+    "Want to enjoy a fresh Shawarma but can't go out?",
+    "Need groceries delivered to your doorstep in Bahrain?",
+    "Thinking of having homemade Bahraini snacks?",
+    "Craving fresh dates or fruits without stepping out?"
   ];
+  
 
   const [currentHeading, setCurrentHeading] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
@@ -44,6 +52,7 @@ const Hero = () => {
   }, [displayedText, isDeleting, currentHeading]);
 
   return (
+    <>
     <div className="flex flex-col lg:flex-row max-w-5xl mx-auto justify-between mt-20 items-center px-6 py-10 ">
       {/* Left Side */}
       <div className="lg:w-1/2 text-center lg:text-left">
@@ -78,6 +87,14 @@ const Hero = () => {
         />
       </div>
     </div>
+    <Aboutus />
+        <RealTimeStats />
+        <Saffaryadvantage />
+<HowItWorks />
+<OurStory />
+<OurMarkets />
+<AppPromotion />
+    </>
   );
 };
 

@@ -2,7 +2,8 @@ import React from "react";
 
 const Saffaryadvantage = () => {
   return (
-    <div className="bg-white py-10 px-5 mb-16 lg:px-20 max-w-7xl mx-auto">
+    <div id="advantages" className="bg-white py-10 px-5 mb-16 lg:px-20 max-w-7xl mx-auto">
+      <h1 className=' text-7xl text-white'>hiii</h1>
       <h2 className="text-center text-2xl  lg:text-4xl font-bold mb-10">
         Advantages of Saffary App
       </h2>
@@ -38,13 +39,14 @@ const Saffaryadvantage = () => {
           </div>
           <div className="flex items-center justify-end space-x-4">
 
-            <div className="text-right">
-              <h3 className="text-xl font-bold mb-2">Easy Access to Menu</h3>
-              <p className="text-sm text-gray-600">
-                No more calls asking “Bhaiya... Menu<br /> me kya hai?!”. Access the
-                complete<br /> menu & place your order in a single<br /> click.
-              </p>
-            </div>
+          <div className="text-right">
+  <h3 className="text-xl font-bold mb-2">Easy Access to Menu</h3>
+  <p className="text-sm text-gray-600">
+    No more calls asking “What’s on the menu?”. Access the
+    complete menu & place your order with a single click, whether it's your favorite Shawarma or Machboos!
+  </p>
+</div>
+
             <img
               src="https://www.ordercoro.com/assets/many.svg"
               alt="Eat Now & Pay Later"

@@ -52,7 +52,9 @@ const OurStory = () => {
   const visibleCards = data.slice(currentIndex, currentIndex + 3);
 
   return (
-    <div className="bg-orange-500 mb-32 text-white py-10 px-4">
+    <div id="story" className="bg-orange-500 text-white py-10 px-4">
+        <h1 className=' text-7xl text-orange-500'>hiii</h1>
+
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-8">Our Story</h2>
         <div className="flex -ml-24 items-center">
