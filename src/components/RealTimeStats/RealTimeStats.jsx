@@ -43,7 +43,7 @@ const RealTimeStats = () => {
           </div>
           <div className="text-center">
             <p className="lg:text-4xl text-xl font-bold">339</p>
-            <p className="text-lg font-bold">Khata Users</p>
+            <p className="text-lg font-bold">Account Users</p>
           </div>
         </div>
       </div>
