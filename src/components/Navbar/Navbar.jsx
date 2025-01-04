@@ -36,14 +36,14 @@ const Navbar = () => {
     <>
       {/* Main Navbar (Logo, Top Menu, and Menu Items) */}
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        className={`fixed  top-0 w-full z-50 transition-all duration-300 ${
           isScrolled ? "bg-lorange text-white" : "bg-lorange text-white"
         }`}
       >
         <div className="container mx-auto flex items-center text-sm justify-between px-6 py-2">
           {/* First Navbar (Top Navbar with 3 Items) */}
-          <div className="flex justify-end space-x-6 mt-2 absolute top-0 right-24 px-6">
-            <a href="#contact" className="text-white  font-semibold mt-3 text-xs">
+          <div className="md:flex hidden justify-end space-x-6 mt-2 absolute top-0 right-24 px-6">
+            <a href="#contact" className="text-white font-semibold mt-3 text-xs">
               Contact Us
             </a>
             <a href="/requestEarly" className="hover:text-gray-400 px-4 outline outline-white rounded-full mt-2">
@@ -101,7 +101,8 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-[#0f2027] text-white py-4 px-6">
+          <div className="md:hidden bg-lorange text-white py-4 px-6">
+            {/* Mobile Menu Items */}
             <a href="#about" className="block py-2 hover:text-gray-400">
               About Us
             </a>
@@ -116,6 +117,16 @@ const Navbar = () => {
             </a>
             <a href="#story" className="block py-2 hover:text-gray-400">
               Our Story
+            </a>
+            {/* Additional Items */}
+            <a href="#contact" className="block py-2 hover:text-gray-400">
+              Contact Us
+            </a>
+            <a href="/requestEarly" className="block py-2 hover:text-gray-400">
+              Request For Early Access
+            </a>
+            <a href="/becomeMerchant" className="block py-2 hover:text-gray-400">
+              Become a Merchant
             </a>
           </div>
         )}
