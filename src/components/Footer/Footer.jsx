@@ -29,45 +29,54 @@ const Footer = () => {
         </div>
 
         {/* Middle Section */}
-        <div className="mb-8 md:mb-0">
-  <h4 className="text-gray-900 font-semibold mb-4">Our Business</h4>
-  <ul className="space-y-2 text-gray-700 text-sm">
-  <li>
-      <a href="/privacy" className=" hover:underline">
-      Privacy & Policy
-      </a>
-    </li>
-    <li>
-      <a href="/t&C" className=" hover:underline">
-      Terms and Conditions
-      </a>
-    </li>
-    <li>
-      <a href="/refund&Cancellation" className=" hover:underline">
-      Cancellation & Refund
-      </a>
-    </li>
-    <li>
-      <a href="/requestEarly" className=" hover:underline">
-        Request for early access
-      </a>
-    </li>
-  </ul>
+        <div className="mb-8 md:mb-0 flex ml-16 justify-between space-x-10">
+  {/* Our Business Section */}
+  <div className="w-full md:w-1/2">
+    <h4 className="text-gray-900 font-semibold mb-4">Our Business</h4>
+    <ul className="space-y-2 text-gray-700 text-sm">
+      <li>
+        <a href="/privacy" className="hover:underline">
+          Privacy & Policy
+        </a>
+      </li>
+      <li>
+        <a href="/t&C" className="hover:underline">
+          Terms and Conditions
+        </a>
+      </li>
+      <li>
+        <a href="/refund&Cancellation" className="hover:underline">
+          Cancellation & Refund
+        </a>
+      </li>
+      <li>
+        <a href="/requestEarly" className="hover:underline">
+          Request for early access
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  {/* Contact Us Section */}
+  <div className="w-full -mt-1 md:w-1/2">
+    <h4 className="text-gray-900 font-semibold mb-4">Contact Us</h4>
+    <ul className="text-gray-700 text-sm space-y-2">
+      <li>+973 33117441</li>
+      <li>info@saffary.com</li>
+      <li>
+        OFFICE 22, BLDG 661, RD<br /> 1208, 
+        BLOCK 712 - SALMABAD, <br />
+        KINGDOM OF BAHRAIN
+      </li>
+    </ul>
+  </div>
 </div>
+
 
 
         {/* Right Section */}
         <div className="mb-8 md:mb-0 flex justify-between items-start">
-          <div className="">
-            <h4 className="text-gray-900 font-semibold mb-4">Contact Us</h4>
-            <ul className="text-gray-700 text-sm space-y-2">
-              <li>+973 33117441</li>
-              <li>info@saffary.com</li>
-              <li>
-                OFFICE 22, BLDG 661, RD 1208, <br /> BLOCK 712 - SALMABAD, <br />KINGDOM OF BAHRAIN
-              </li>
-            </ul>
-          </div>
+         
           <div className="grid grid-cols-2 ml-0 lg:ml-32 gap-4 mt-6">
             <AiOutlineLinkedin className="text-orange-500 text-5xl cursor-pointer hover:text-orange-600" />
             <AiOutlineTwitter className="text-orange-500 text-5xl cursor-pointer hover:text-orange-600" />
