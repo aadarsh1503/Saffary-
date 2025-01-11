@@ -1,5 +1,5 @@
 import React from "react";
-
+import i1 from "./i1.png"
 const Saffaryadvantage = () => {
   return (
     <div id="advantages" className="bg-white py-10 px-5 mb-16 lg:px-20 max-w-7xl mx-auto">
@@ -68,7 +68,7 @@ const Saffaryadvantage = () => {
         {/* Center Image */}
         <div className="flex justify-center">
           <img
-            src="https://www.ordercoro.com/assets/coro_web_banner.png"
+            src={i1}
             alt="Mobile App"
             className="w-1/2 lg:w-72"
           />

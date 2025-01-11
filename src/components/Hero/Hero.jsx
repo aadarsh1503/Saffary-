@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import i1 from "./i1.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAppStore, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
 import Aboutus from "../Aboutus/Aboutus";
@@ -81,7 +81,7 @@ const Hero = () => {
       {/* Right Side (Image Section) */}
       <div className="lg:w-2/2 hidden lg:block">
         <img
-          src="https://www.ordercoro.com/assets/Top_banner_coro.png"
+          src={i1}
           alt="App Preview"
           className="rounded-lg "
         />

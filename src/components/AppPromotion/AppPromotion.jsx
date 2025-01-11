@@ -1,5 +1,6 @@
 import React from 'react';
 import g1 from "./g1.jpeg"
+import i1 from "./i1.png"
 function AppPromotion() {
   return (
     <div id='markets' className="bg-lorange text-white mb-10 rounded-2xl   max-w-4xl mx-auto flex justify-between items-center px-6 md:px-20">
@@ -40,7 +41,7 @@ function AppPromotion() {
       {/* Right Side Content */}
       <div>
         <img
-          src="https://www.ordercoro.com/assets/coro_web_banner.png"
+          src={i1}
           alt="App preview on a phone"
           className="h-80 md:h-96 object-contain"
         />
