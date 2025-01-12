@@ -12,7 +12,7 @@ const RealTimeStats = () => {
     src={i1} 
     alt="Real Time Stats"
     
-    className="w-56 h-56 object-contain"
+    className="w-96 h-80 object-contain"
   />
   
 </div>
