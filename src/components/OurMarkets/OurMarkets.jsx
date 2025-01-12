@@ -1,5 +1,5 @@
 import React from "react";
-import i1 from "./i1.webp"
+import i1 from "./i1.png"
 const OurMarkets = () => {
   return (
     <section id="markets" className="bg-white mb-20 ">
@@ -20,7 +20,7 @@ const OurMarkets = () => {
           <img
             src={i1}
             alt="Our Markets Map"
-            className="w-[200px] lg:w-[500px] max-w-2xl h-[200px] lg:h-[500px] rounded-lg shadow-md"
+            className="w-[200px] lg:w-[500px] max-w-2xl h-[200px] lg:h-[500px] rounded-lg "
           />
         </div>
       </div>
