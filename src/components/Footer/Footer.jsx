@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 const Footer = () => {
   return (
     <div className="bg-gray-50">
-    <footer id="contact" className=" max-w-5xl mx-auto py-8 border-t">
+    <footer id="contact" className=" max-w-5xl mx-auto py-8 ">
       <div className=" mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center">
         {/* Left Section */}
         <div className="mb-8 ml-0 lg:-ml-8 md:mb-0">
