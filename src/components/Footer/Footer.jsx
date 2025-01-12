@@ -19,7 +19,7 @@ const Footer = () => {
           </p>
           <div className="flex flex-col space-y-4">
   <Link to="/becomeMerchant">
-    <button className="w-full max-w-xs hover:text-lorange hover:outline-lorange outline mx-auto ml-0 lg:ml-2 rounded-full  font-semibold text-gray-700 py-3 px-10  hover:bg-gray-100 whitespace-nowrap text-center">
+    <button className="w-full max-w-xs ml-4 hover:text-lorange hover:outline-lorange outline mx-auto  lg:ml-2 rounded-full  font-semibold text-gray-700 py-3 px-10  hover:bg-gray-100 whitespace-nowrap text-center">
       Become a Merchant
     </button>
   </Link>
