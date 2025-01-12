@@ -1,6 +1,6 @@
 import React from "react";
 import { AiOutlineTwitter, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineFacebook } from "react-icons/ai";
-import g1 from "./g1.jpeg";
+import g1 from "./g1.png";
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Footer = () => {
