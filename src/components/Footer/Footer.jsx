@@ -9,7 +9,7 @@ const Footer = () => {
     <footer id="contact" className=" max-w-5xl mx-auto py-8 border-t">
       <div className=" mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center">
         {/* Left Section */}
-        <div className="mb-8 -ml-8 md:mb-0">
+        <div className="mb-8 ml-0 lg:-ml-8 md:mb-0">
           {/* Logo */}
           <div className="mb-4 ml-9 lg:ml-0">
             <img src={g1} alt="Logo" className="h-20" />
@@ -19,7 +19,7 @@ const Footer = () => {
           </p>
           <div className="flex flex-col space-y-4">
   <Link to="/becomeMerchant">
-    <button className="w-full max-w-xs hover:text-lorange hover:outline-lorange outline mx-auto  ml-2 rounded-full  font-semibold text-gray-700 py-3 px-10  hover:bg-gray-100 whitespace-nowrap text-center">
+    <button className="w-full max-w-xs hover:text-lorange hover:outline-lorange outline mx-auto ml-0 lg:ml-2 rounded-full  font-semibold text-gray-700 py-3 px-10  hover:bg-gray-100 whitespace-nowrap text-center">
       Become a Merchant
     </button>
   </Link>
@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
 
         {/* Middle Section */}
-        <div className="mb-8 md:mb-0 flex ml-16 -mt-20 justify-between space-x-6">
+        <div className="mb-8 md:mb-0 flex lg:ml-16 ml-0 mt-0 lg:-mt-20 justify-between space-x-6">
   {/* Our Business Section */}
   <div className="w-full md:w-1/2">
     <h4 className="text-gray-900 font-semibold mb-4">Our Business</h4>
@@ -77,7 +77,7 @@ const Footer = () => {
 
 
         {/* Right Section */}
-        <div className="mb-8 md:mb-0 flex justify-between -mt-44 items-start">
+        <div className="mb-8 md:mb-0 flex justify-between mt-0 lg:-mt-44 items-start">
          
           <div className="grid grid-cols-2 ml-0 lg:ml-3 gap-4 mt-6">
             <AiOutlineLinkedin className="text-orange-500 text-5xl cursor-pointer hover:text-orange-600" />
