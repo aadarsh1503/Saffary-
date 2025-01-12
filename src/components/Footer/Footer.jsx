@@ -17,24 +17,24 @@ const Footer = () => {
             Saffary is one of Bahrain's leading<br /> FoodTech Platform for Hyperlocal Market.
           </p>
           <div className="flex flex-col space-y-4">
-            <Link to="/becomeMerchant"> 
-            <button className="border border-gray-700 ml-9 lg:ml-0 text-gray-700 py-2 px-24 lg:px-32 rounded-md hover:bg-gray-100 whitespace-nowrap">
-  Become a merchant
-</button>
+  <Link to="/becomeMerchant">
+    <button className="w-full max-w-xs mx-auto border ml-2 rounded-full border-gray-700 font-semibold text-gray-700 py-3 px-10  hover:bg-gray-100 whitespace-nowrap text-center">
+      Become a Merchant
+    </button>
+  </Link>
+  <button className="w-full max-w-xs  mx-auto border border-gray-700 font-semibold text-gray-700 py-3 px-10 rounded-full hover:bg-gray-100 whitespace-nowrap text-center">
+    Request a Demo
+  </button>
+</div>
 
-            </Link>
-            <button className="border border-gray-700 lg:ml-0 ml-9 text-gray-700 py-2 px-3 rounded-md hover:bg-gray-100">
-              Request a Demo
-            </button>
-          </div>
         </div>
 
         {/* Middle Section */}
-        <div className="mb-8 md:mb-0 flex ml-16 justify-between space-x-10">
+        <div className="mb-8 md:mb-0 flex ml-16 justify-between space-x-6">
   {/* Our Business Section */}
   <div className="w-full md:w-1/2">
     <h4 className="text-gray-900 font-semibold mb-4">Our Business</h4>
-    <ul className="space-y-2 text-gray-700 text-sm">
+    <ul className="space-y-2 text-gray-700 font-semibold text-sm">
       <li>
         <a href="/privacy" className="hover:underline">
           Privacy & Policy
@@ -61,12 +61,12 @@ const Footer = () => {
   {/* Contact Us Section */}
   <div className="w-full -mt-1 md:w-1/2">
     <h4 className="text-gray-900 font-semibold mb-4">Contact Us</h4>
-    <ul className="text-gray-700 text-sm space-y-2">
+    <ul className="text-gray-700 font-semibold text-sm space-y-2">
       <li>+973 33117441</li>
       <li>info@saffary.com</li>
       <li>
-        OFFICE 22, BLDG 661, RD<br /> 1208, 
-        BLOCK 712 - SALMABAD, <br />
+        OFFICE 22, BLDG 661,<br /> RD 1208,
+        BLOCK 712 - SALMABAD,<br />
         KINGDOM OF BAHRAIN
       </li>
     </ul>
@@ -78,7 +78,7 @@ const Footer = () => {
         {/* Right Section */}
         <div className="mb-8 md:mb-0 flex justify-between items-start">
          
-          <div className="grid grid-cols-2 ml-0 lg:ml-32 gap-4 mt-6">
+          <div className="grid grid-cols-2 ml-0 lg:ml-3 gap-4 mt-6">
             <AiOutlineLinkedin className="text-orange-500 text-5xl cursor-pointer hover:text-orange-600" />
             <AiOutlineTwitter className="text-orange-500 text-5xl cursor-pointer hover:text-orange-600" />
             <AiOutlineInstagram className="text-orange-500 text-5xl cursor-pointer hover:text-orange-600" />
