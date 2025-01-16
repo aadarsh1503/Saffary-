@@ -43,7 +43,7 @@ const Navbar = () => {
         <div className="container mx-auto flex items-center text-sm justify-between px-6 py-2">
           {/* First Navbar (Top Navbar with 3 Items) */}
           <div className="md:flex hidden justify-end space-x-6 mt-2 absolute top-0 right-24 px-6">
-            <a href="#contact" className="text-white font-semibold mt-3 text-xs">
+            <a href="/#contact" className="text-white font-semibold mt-3 text-xs">
               Contact Us
             </a>
             <a href="/requestEarly" className="hover:text-gray-400 px-4 outline outline-white rounded-full mt-2">
