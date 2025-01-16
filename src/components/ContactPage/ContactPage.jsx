@@ -25,7 +25,7 @@ const ContactPage = () => {
     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14435.236249565674!2d50.5237206!3d26.1868843!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49afd0213a19d3%3A0x2f892ffe9e6f0385!2sGlobal%20Vision%20Solutions!5e0!3m2!1sen!2sin!4v1731936574918!5m2!1sen!2sin"
     width="100%"
     height="400"
-    className="  w-full "
+    className="  w-full rounded-xl "
     allowFullScreen
   ></iframe>
 
