@@ -11,6 +11,7 @@ import CancellationRefundPolicy from './components/CancellationRefundPolicy/Canc
 import TermsAndConditions from './components/TermsAndConditions/TermsAndConditions';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/refund&Cancellation" element={<CancellationRefundPolicy />} />
           <Route path="/t&C" element={<TermsAndConditions />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+  
         </Routes>
         <Footer />
       </div>

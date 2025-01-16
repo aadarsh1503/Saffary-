@@ -2,11 +2,13 @@ import React from "react";
 import { AiOutlineTwitter, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineFacebook } from "react-icons/ai";
 import g1 from "./g1.png";
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
     <div className="bg-gray-50">
-    <footer id="contact" className=" max-w-5xl mx-auto py-8 ">
+    <footer  className=" max-w-5xl mx-auto py-8 ">
       <div className=" mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center">
         {/* Left Section */}
         <div className="mb-8 ml-0 lg:-ml-8 md:mb-0">
@@ -81,7 +83,7 @@ const Footer = () => {
          
           <div className="grid grid-cols-2 ml-0 lg:ml-3 gap-4 mt-6">
             <AiOutlineLinkedin className="text-orange-500 text-5xl cursor-pointer hover:text-orange-600" />
-            <AiOutlineTwitter className="text-orange-500 text-5xl cursor-pointer hover:text-orange-600" />
+            <FontAwesomeIcon icon={faXTwitter} className="text-orange-500 text-5xl cursor-pointer hover:text-orange-600" />
             <AiOutlineInstagram className="text-orange-500 text-5xl cursor-pointer hover:text-orange-600" />
             <a href="https://www.facebook.com/saffarystation/" target="_blank" rel="noopener noreferrer">
               <AiOutlineFacebook className="text-orange-500 text-5xl cursor-pointer hover:text-orange-600" />

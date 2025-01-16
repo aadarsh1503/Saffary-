@@ -2,7 +2,7 @@ import React from "react";
 import i1 from "./i1.png"
 const OurMarkets = () => {
   return (
-    <section id="markets" className="bg-white mb-20 ">
+    <section id="markets" className="bg-white  ">
       <div className="container mx-auto px-6 md:px-12 text-left">
       <h1 className=' text-7xl text-white'>hiii</h1>
         {/* Heading Section */}

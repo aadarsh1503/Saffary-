@@ -9,6 +9,7 @@ import HowItWorks from "../HowItWorks/HowItWorks";
 import OurStory from "../OurStory/OurStory";
 import OurMarkets from "../OurMarkets/OurMarkets";
 import AppPromotion from "../AppPromotion/AppPromotion";
+import ContactPage from "../ContactPage/ContactPage";
 
 const Hero = () => {
   const headings = [
@@ -93,6 +94,7 @@ const Hero = () => {
 <HowItWorks />
 <OurStory />
 <OurMarkets />
+<ContactPage />
 <AppPromotion />
     </>
   );
