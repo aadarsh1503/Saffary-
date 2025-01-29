@@ -10,6 +10,7 @@ import BecomeMerchantForm from './components/BecomeMerchantForm/BecomeMerchantFo
 import CancellationRefundPolicy from './components/CancellationRefundPolicy/CancellationRefundPolicy';
 import TermsAndConditions from './components/TermsAndConditions/TermsAndConditions';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
+import { DirectionProvider } from './components/DirectionContext';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
   return (
     <BrowserRouter> {/* Wrap the app with BrowserRouter */}
       <div>
+        <DirectionProvider />
         <Navbar />
         <Routes> {/* Wrap Route components inside Routes */}
           <Route path="/" element={<Hero />} />

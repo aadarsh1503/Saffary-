@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useTranslation } from "react-i18next";
 
 const RequestEarlyAccess = () => {
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar"; // Check if the current language is Arabic
   const [recaptchaVerified, setRecaptchaVerified] = useState(false);
 
   const handleRecaptchaChange = (value) => {
@@ -11,18 +14,20 @@ const RequestEarlyAccess = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!recaptchaVerified) {
-      alert("Please verify the reCAPTCHA.");
+      alert(t("Please verify the reCAPTCHA.")); // Using translation for reCAPTCHA message
       return;
     }
     // Process form submission
-    alert("Form submitted successfully!");
+    alert(t("Form submitted successfully!")); // Using translation for success message
   };
 
   return (
     <section className="bg-white mt-20 lg:mt-20 py-12">
       <div className="container mx-auto px-6 md:px-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">
-          Request Early Access
+        <h2
+          className={`text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center ${isRTL ? "text-right" : "text-left"}`}
+        >
+          {t("Request Early Access")}
         </h2>
         <form
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
@@ -32,14 +37,14 @@ const RequestEarlyAccess = () => {
           <div>
             <label
               htmlFor="city"
-              className="block text-sm font-medium text-gray-700"
+              className={`block text-sm font-medium text-gray-700 ${isRTL ? "text-right" : "text-left"}`}
             >
-              City *
+              {t("City")} *
             </label>
             <input
               type="text"
               id="city"
-              placeholder="Enter City"
+              placeholder={t("Enter City")}
               className="mt-1 block w-full py-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               required
             />
@@ -49,14 +54,14 @@ const RequestEarlyAccess = () => {
           <div>
             <label
               htmlFor="area"
-              className="block text-sm font-medium text-gray-700"
+              className={`block text-sm font-medium text-gray-700 ${isRTL ? "text-right" : "text-left"}`}
             >
-              Area *
+              {t("Area")} *
             </label>
             <input
               type="text"
               id="area"
-              placeholder="Enter Area"
+              placeholder={t("Enter Area")}
               className="mt-1 block w-full py-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               required
             />
@@ -66,14 +71,14 @@ const RequestEarlyAccess = () => {
           <div>
             <label
               htmlFor="locality"
-              className="block text-sm font-medium text-gray-700"
+              className={`block text-sm font-medium text-gray-700 ${isRTL ? "text-right" : "text-left"}`}
             >
-              Locality/Office *
+              {t("Locality/Office")} *
             </label>
             <input
               type="text"
               id="locality"
-              placeholder="Enter Locality/Office"
+              placeholder={t("Enter Locality/Office")}
               className="mt-1 block w-full py-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               required
             />
@@ -83,14 +88,14 @@ const RequestEarlyAccess = () => {
           <div>
             <label
               htmlFor="comment"
-              className="block text-sm font-medium text-gray-700"
+              className={`block text-sm font-medium text-gray-700 ${isRTL ? "text-right" : "text-left"}`}
             >
-              Comment *
+              {t("Comment")} *
             </label>
             <input
               type="text"
               id="comment"
-              placeholder="Enter Comment"
+              placeholder={t("Enter Comment")}
               className="mt-1 block w-full py-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               required
             />
@@ -100,14 +105,14 @@ const RequestEarlyAccess = () => {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
+              className={`block text-sm font-medium text-gray-700 ${isRTL ? "text-right" : "text-left"}`}
             >
-              Email *
+              {t("Email")} *
             </label>
             <input
               type="email"
               id="email"
-              placeholder="Enter Email"
+              placeholder={t("Enter Email")}
               className="mt-1 block w-full py-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               required
             />
@@ -116,15 +121,15 @@ const RequestEarlyAccess = () => {
           {/* Mobile Number Input */}
           <div>
             <label
-              htmlFor="mobile"
-              className="block text-sm font-medium text-gray-700"
+              htmlFor="email"
+              className={`block text-sm font-medium text-gray-700 ${isRTL ? "text-right" : "text-left"}`}
             >
-              Mobile Number *
+              {t("Mobile Number")} *
             </label>
             <input
-              type="tel"
-              id="mobile"
-              placeholder="Enter Mobile Number"
+              type="email"
+              id="email"
+              placeholder= {t("Enter Mobile Number")}
               className="mt-1 block w-full py-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
               required
             />
@@ -142,10 +147,10 @@ const RequestEarlyAccess = () => {
           <div className="col-span-1 md:col-span-2 text-center">
             <button
               type="submit"
-              className="mt-4 w-full md:w-1/3 px-4 py-2 bg-white text-lorange outline outline-lorange hover:bg-lorange hover:text-white rounded-lg shadow-sm  transition duration-200"
+              className="mt-4 w-full md:w-1/3 px-4 py-2 bg-white text-lorange outline outline-lorange hover:bg-lorange hover:text-white rounded-lg shadow-sm transition duration-200"
               disabled={!recaptchaVerified}
             >
-              Submit
+              {t("Submit")}
             </button>
           </div>
         </form>

@@ -1,46 +1,57 @@
-import React, { useState } from "react";
-import i1 from "./i1.png"
-import i2 from "./i2.png"
-import i3 from "./i3.png"
-import i4 from "./i4.png"
-import i5 from "./i5.png"
-import i6 from "./i6.png"
+import React, { useState ,useEffect} from "react";
+import i1 from "./i1.png";
+import i2 from "./i2.png";
+import i3 from "./i3.png";
+import i4 from "./i4.png";
+import i5 from "./i5.png";
+import i6 from "./i6.png";
+import { useTranslation } from "react-i18next";
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 const HowItWorks = () => {
+  const { t, i18n } = useTranslation();
+  
+  const [isRTL, setIsRTL] = useState(i18n.language === 'ar');
+  
+  useEffect(() => {
+    setIsRTL(i18n.language === 'ar');
+    document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+  }, [i18n.language]);
+
   const steps = [
     {
       id: 1,
-      title: "Register",
-      description: "Register yourself on the Saffary app and choose your location by enabling location permission or by choosing manual.",
+      title: t("register"),
+      description: t("registerDescription"),
       image: i1,
     },
     {
       id: 2,
-      title: "Find Nearby Merchant",
-      description: "If any merchant who is associated with us is present in that respective area, the same will be listed under 'Nearby Merchant' section. By clicking on the merchant icon, you can view their complete menu and start selecting items of your choice.",
+      title: t("findNearbyMerchant"),
+      description: t("findNearbyMerchantDescription"),
       image: i2,
     },
     {
       id: 3,
-      title: "Provide your delivery Address",
-      description: "On the cart page, you will be asked to enter your delivery address. Verified addresses can place orders without validation.",
+      title: t("provideDeliveryAddress"),
+      description: t("provideDeliveryAddressDescription"),
       image: i3,
     },
     {
       id: 4,
-      title: "Order Details & Track Order",
-      description: "All order details will be shown under the 'History' tab. You can also track your orders or seek help through the provided options.",
+      title: t("orderDetailsTrack"),
+      description: t("orderDetailsTrackDescription"),
       image: i4,
     },
     {
       id: 5,
-      title: "Explore Section",
-      description: "Read about all important activities happening nearby in this tab.",
+      title: t("exploreSection"),
+      description: t("exploreSectionDescription"),
       image: i5,
     },
     {
       id: 6,
-      title: "Digital Account",
-      description: "Under the Account section, you can see month-wise pending dues from your merchants and track the status of payments.",
+      title: t("digitalAccount"),
+      description: t("digitalAccountDescription"),
       image: i6,
     },
   ];
@@ -50,10 +61,8 @@ const HowItWorks = () => {
   return (
     <div id="steps" className="flex flex-col sm:flex-row items-start min-h-screen justify-between w-full bg-white">
       {/* Left Side */}
-      
-      <div className="w-full sm:w-1/2 p-6 sm:ml-32">
-      <h1 className=' text-7xl text-white'>hiii</h1>
-        <h2 className="text-4xl font-bold mb-6">How does it work?!</h2>
+      <div className="w-full sm:w-1/2 p-6 sm:ml-32 mr-32">
+        <h2 className="text-4xl font-bold mb-6">{t("howItWorksTitle")}</h2>
         <ul className="space-y-8">
           {steps.map((step) => (
             <li
@@ -68,19 +77,23 @@ const HowItWorks = () => {
           ))}
         </ul>
         <button className="mt-6 px-4 py-2 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-500 hover:text-white transition-all flex items-center">
-          Request a Demo <span className="ml-2">&#8594;</span>
-        </button>
+      {t("requestDemo")}
+      {isRTL ? (
+        <FaArrowLeft className="text-lg ml-2 mt-1 mr-3" />
+      ) : (
+        <FaArrowRight className="text-lg ml-2 " />
+      )}
+    </button>
       </div>
 
       {/* Right Side */}
-      <div className=" lg:w-2/5 w-full lg:ml-0 flex flex-col items-center mt-8 justify-center bg-white lg:bg-gray-100 rounded-lg lg:shadow-md p-6">
-      <h1 className=' text-7xl text-white lg:text-gray-100'>hiii</h1>
+      <div className="lg:w-2/5 w-full lg:mr-32 flex flex-col lg:ml-32 items-center mt-8 justify-center rounded-lg p-6">
         <img
           src={activeStep.image}
           alt={activeStep.title}
           className="lg:w-96 lg:h-96 -ml-3 h-[200px] lg:-ml-44 -mt-32 lg:-mt-16 object-contain transition-transform duration-300 ease-in-out"
         />
-        <div className="-mt-10  lg:-ml-56 bg-white p-4 rounded-lg shadow-md w-full">
+        <div className={`-mt-10 lg:-ml-56 bg-white p-4 rounded-lg shadow-md w-full ${isRTL ? "text-right" : "text-left"}`}>
           <h3 className="text-xl font-bold mb-2">{activeStep.title}</h3>
           <p className="text-gray-600 text-lg">{activeStep.description}</p>
         </div>

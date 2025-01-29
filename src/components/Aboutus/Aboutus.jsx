@@ -1,28 +1,24 @@
 import React from 'react';
-import g1 from "./g1.png";
+import { useTranslation } from 'react-i18next'; // Import useTranslation hook
+import g1 from "./g1.png"; // Your image
 
 const Aboutus = () => {
+  const { t } = useTranslation(); // Initialize translation hook
+
   return (
     <section id='about' className="flex flex-col lg:flex-row items-center mt-2 max-w-7xl mx-auto justify-between py-20 px-6 ">
-      
       <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
-        <h1 className=' text-5xl text-white'>hiii</h1>
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">About Saffary</h1>
-        <p className="text-lg text-gray-700 mb-4">
-          Saffary is one of Bahrain's leading FoodTech Platform for Hyperlocal Market.
-        </p>
-        <p className="text-lg text-gray-700 mb-4">
-          Saffary is an innovative solution for anyone who wants to have coffee, snacks & instant bites/meals from nearby merchants. Through Saffary App, anyone can access a list of items provided by nearby merchants who have partnered with Saffary and can easily place an order with 3 simple & easy steps.
-        </p>
-        <p className="text-lg text-gray-700 mb-4">
-          Our concept has been validated, and we are already generating significant traction at our pilot site, which is in the capital governorate, Manama. Our aim is to expand this model to all such places in Bahrain at the kick start.
-        </p>
+        <h1 className=' text-5xl text-white'>{t('hello')}</h1> {/* Dynamic translation */}
+        <h1 className="text-3xl font-bold text-gray-800 mb-4">{t('aboutSaffary')}</h1> {/* Dynamic translation */}
+        <p className="text-lg text-gray-700 mb-4">{t('saffaryDescription')}</p> {/* Dynamic translation */}
+        <p className="text-lg text-gray-700 mb-4">{t('saffaryDetails')}</p> {/* Dynamic translation */}
+        <p className="text-lg text-gray-700 mb-4">{t('conceptValidation')}</p> {/* Dynamic translation */}
       </div>
 
       <div className="w-full lg:w-1/2">
         <img 
-          src={g1} // Replace with your image URL
-          alt="CORO Image"
+          src={g1} 
+          alt={t('aboutSaffary')} // Dynamic alt text for accessibility
           className="w-full h-auto rounded-lg "
         />
       </div>
