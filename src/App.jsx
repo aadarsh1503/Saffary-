@@ -11,6 +11,7 @@ import CancellationRefundPolicy from './components/CancellationRefundPolicy/Canc
 import TermsAndConditions from './components/TermsAndConditions/TermsAndConditions';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 import { DirectionProvider } from './components/DirectionContext';
+import MobileNavbar from './components/MobileNavbar/MobileNavbar';
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
   return (
     <BrowserRouter> {/* Wrap the app with BrowserRouter */}
       <div>
-        <DirectionProvider />
+        <DirectionProvider />\
+    
         <Navbar />
         <Routes> {/* Wrap Route components inside Routes */}
           <Route path="/" element={<Hero />} />

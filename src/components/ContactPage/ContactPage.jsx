@@ -21,7 +21,7 @@ const ContactPage = () => {
 
       {/* Map Section */}
       <div className="">
-        <div className="flex shadow-custom rounded-xl flex-col w-3/4 mr-[180px] ml-[180px] items-center space-y-4 mb-20">
+        <div className="flex shadow-custom rounded-xl flex-col w-3/4 mr-0 ml-12 lg:mr-[180px] lg:ml-[180px] items-center space-y-4 mb-20">
           {/* Map Section */}
           <iframe
             title="Google Map"
@@ -29,11 +29,11 @@ const ContactPage = () => {
             width="100%"
             height="400"
             className="w-full rounded-xl"
-            allowFullScreen
+            allowFullScreen  
           ></iframe>
 
           {/* Address Section */}
-          <p className="text-left p-4 relative right-52 whitespace-nowrap text-gray-700">
+          <p className="text-left right-0 p-4 relative lg:right-52 whitespace-normal lg:whitespace-nowrap text-gray-700">
             {t("address")}
           </p>
         </div>

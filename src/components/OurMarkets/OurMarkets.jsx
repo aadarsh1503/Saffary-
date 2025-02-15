@@ -21,7 +21,7 @@ const OurMarkets = () => {
           <img
             src={i1}
             alt={t('ourMarkets')}
-            className="w-[200px] lg:w-[500px] max-w-2xl h-[200px] lg:h-[500px] rounded-lg"
+            className="w-[300px] lg:w-[500px] max-w-2xl h-[300px] lg:h-[500px] rounded-lg"
           />
         </div>
       </div>

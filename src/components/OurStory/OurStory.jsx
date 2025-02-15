@@ -43,7 +43,7 @@ const OurStory = () => {
 
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-8">{t("storyTitle")}</h2>
-        <div className="flex flex-col ml-0 lg:-ml-20 -mr-20 sm:flex-row items-center justify-between">
+        <div className="flex flex-col -ml-5 lg:-ml-20 mr-0 lg:-mr-20 sm:flex-row items-center justify-between">
           {/* Previous Button (Hidden on Mobile) */}
           <div className="hidden sm:block">
             <button

@@ -6,7 +6,7 @@ const Aboutus = () => {
   const { t } = useTranslation(); // Initialize translation hook
 
   return (
-    <section id='about' className="flex flex-col lg:flex-row items-center mt-2 max-w-7xl mx-auto justify-between py-20 px-6 ">
+    <section id='about' className="flex flex-col lg:flex-row items-center mt-2 max-w-7xl mx-auto justify-between py-10 lg:py-20 px-6 ">
       <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
         <h1 className=' text-5xl text-white'>{t('hello')}</h1> {/* Dynamic translation */}
         <h1 className="text-3xl font-bold text-gray-800 mb-4">{t('aboutSaffary')}</h1> {/* Dynamic translation */}
@@ -19,7 +19,7 @@ const Aboutus = () => {
         <img 
           src={g1} 
           alt={t('aboutSaffary')} // Dynamic alt text for accessibility
-          className="w-full h-auto rounded-lg "
+          className="lg:w-full w-[500px] h-[200px] lg:h-auto rounded-lg "
         />
       </div>
     </section>
