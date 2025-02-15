@@ -58,18 +58,18 @@ const Hero = () => {
 
   return (
     <>
-      <div className={`flex flex-col lg:flex-row max-w-5xl mx-auto justify-between mt-20 items-center px-6 py-10 ${i18n.language === 'ar' ? 'text-right' : ''}`}>
+      <div className={`flex flex-col lg:flex-row max-w-5xl mx-auto justify-between mt-20 items-center px-6 py-10 ${i18n.language === 'ar' ? 'text-right mr-36' : ''}`}>
         {/* Left Side */}
         <div className="lg:w-1/2 text-center lg:text-left">
-          <h1 className="lg:text-4xl text-2xl font-bold mb-10 min-h-[5rem]">
+          <h1 className={`lg:text-4xl text-2xl font-bold mb-10 min-h-[5rem] ${i18n.language === 'ar' ? 'text-right mr-28' : ''}`}>
             {displayedText}
             <span className="text-orange-500">|</span> {/* Cursor effect */}
           </h1>
 
-          <p className="text-gray-600 mb-6 text-lg lg:text-xl">
+          <p className={`text-gray-600 mb-6 text-lg lg:text-xl ${i18n.language === 'ar' ? 'text-right mr-28' : ''}`}>
             {t("hero.description")}
           </p>
-          <button className="bg-white text-lorange text-lg mr-0 lg:ml-0 ml-[80px] lg:mr-72 relative right-0 lg:right-6 left-1 outline-lorange outline font-semibold px-2 lg:px-6 py-2  rounded-lg mb-4 shadow-md hover:bg-lorange hover:text-white flex items-center">
+          <button className={`bg-white text-lorange ${i18n.language === 'ar' ? 'text-right mr-28' : ''} text-lg mr-0 lg:ml-0 ml-[80px] lg:mr-72 relative right-0 lg:right-6 left-1 outline-lorange outline font-semibold px-2 lg:px-6 py-2  rounded-lg mb-4 shadow-md hover:bg-lorange hover:text-white flex items-center`}>
       {t("hero.placeOrderButton")}
       {isRTL ? (
         <FaArrowLeft className="text-lg ml-2 mr-3 mt-2" />

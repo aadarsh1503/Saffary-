@@ -11,7 +11,7 @@ const Footer = () => {
   const isRTL = i18n.language === "ar"; // Check if the language is Arabic (RTL)
 
   return (
-    <div className="bg-gray-50">
+    <div className={`bg-gray-5 ${i18n.language === 'ar' ? 'text-right relative lg:right-0 right-32 ' : ''}`}>
       <footer className="max-w-5xl mx-auto py-8">
         <div className="mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center">
           {/* Left Section */}
@@ -32,7 +32,7 @@ const Footer = () => {
                 </button>
               </Link>
               <button
-                className={`w-full max-w-xs mx-auto ${
+                className={`w-full max-w-xs left-[0.1px] mx-auto ${
                   isRTL ? "-mr-1 " : "relative  right-10 "
                 } hover:text-lorange hover:outline-lorange outline font-semibold text-gray-700 py-3 px-10 rounded-full hover:bg-gray-100 whitespace-nowrap text-center`}
               >

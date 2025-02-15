@@ -38,7 +38,7 @@ const OurStory = () => {
   const visibleCards = data.slice(currentIndex, currentIndex + 3);
 
   return (
-    <div id="story" className="bg-orange-500 text-white py-10 px-4">
+    <div id="story" className={`bg-orange-500  ${i18n.language === 'ar' ? 'text-right relative lg:right-0 right-32 ' : ''} text-white py-10 px-4`}>
       <h1 className="text-7xl text-orange-500">{t("hi")}</h1>
 
       <div className="max-w-5xl mx-auto">

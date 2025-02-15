@@ -107,7 +107,7 @@ const Navbar = () => {
               ) : (
                 <FaBars className="text-2xl cursor-pointer text-white" onClick={toggleMobileMenu} />
               )}
-              {isMobileMenuOpen && <MobileMenu toggleMobileMenu={toggleMobileMenu} />}
+            <MobileMenu toggleMobileMenu={toggleMobileMenu} isOpen={isMobileMenuOpen} />
             </div>
           )}
         </div>

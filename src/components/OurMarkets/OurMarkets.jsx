@@ -1,12 +1,13 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
 import i1 from "./i1.png";
+import i18n from "../../i18n";
 
 const OurMarkets = () => {
   const { t } = useTranslation();  // Use the translation hook
 
   return (
-    <section id="markets" className="bg-white mt-20">
+    <section id="markets" className={`bg-white   ${i18n.language === 'ar' ? 'text-right relative lg:right-0 right-32 ' : ''} mt-20`}>
       <div className="container mx-auto px-6 md:px-12 text-left">
         {/* Heading Section */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">

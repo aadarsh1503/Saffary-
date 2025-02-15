@@ -4,17 +4,21 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageToggle from "../../LanguageToggle";
 
-const MobileMenu = ({ toggleMobileMenu }) => {
+const MobileMenu = ({ toggleMobileMenu, isOpen }) => {
   const { t } = useTranslation();
 
   return (
-    <div className="fixed top-0 left-0 right-32 w-full h-[700px] bg-lorange text-white z-50 transform transition-transform duration-300 translate-x-0">
+    <div
+      className={`fixed lg:hidden top-0 left-0 w-full h-[600px] bg-lorange text-white z-50 transform transition-transform duration-300 ${
+        isOpen ? "translate-x-0" : "translate-x-full"
+      }`}
+    >
       <div className="flex justify-between items-center px-6 py-4 border-b border-gray-300">
         <h2 className="text-lg font-semibold">{t("menu")}</h2>
-        <FaTimes className="text-2xl ml-32 cursor-pointer" onClick={toggleMobileMenu} />
+        <FaTimes className="text-2xl cursor-pointer" onClick={toggleMobileMenu} />
       </div>
 
-      <div className="flex flex-col items-center mt-10  space-y-3 text-lg font-medium">
+      <div className="flex flex-col items-center mt-10 space-y-6 text-lg font-medium">
         <Link to="/#about" onClick={toggleMobileMenu} className="hover:text-gray-300">
           {t("about")}
         </Link>
@@ -42,7 +46,7 @@ const MobileMenu = ({ toggleMobileMenu }) => {
         <Link to="/contact" onClick={toggleMobileMenu} className="hover:text-gray-300">
           {t("contact")}
         </Link>
-    
+        
       </div>
     </div>
   );

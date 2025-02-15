@@ -87,7 +87,7 @@ const HowItWorks = () => {
       </div>
 
       {/* Right Side */}
-      <div className="lg:w-2/5 w-full lg:mr-32 flex flex-col lg:ml-32 items-center mt-8 justify-center rounded-lg p-6">
+      <div className={`lg:w-2/5 w-full lg:mr-32  ${i18n.language === 'ar' ? 'text-right relative lg:right-0 right-32 lg:top-0 mb-10 top-10 ' : ''} flex flex-col lg:ml-32 items-center mt-8 justify-center rounded-lg p-6`}>
         <img
           src={activeStep.image}
           alt={activeStep.title}

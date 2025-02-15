@@ -1,12 +1,13 @@
 import React from "react";
 import i1 from "./i1.png";
 import { useTranslation } from 'react-i18next';
+import i18n from "../../i18n";
 
 const Saffaryadvantage = () => {
   const { t } = useTranslation();
 
   return (
-    <div id="advantages" className="bg-white py-10 px-5 mb-16 lg:px-20 max-w-7xl mx-auto">
+    <div id="advantages" className={`bg-white  ${i18n.language === 'ar' ? 'text-right relative lg:right-0 right-32 ' : ''} py-10 px-5 mb-16 lg:px-20 max-w-7xl mx-auto`}>
       <h1 className='text-7xl text-white'>{t('hiii')}</h1>
       <h2 className="text-center text-2xl lg:text-4xl font-bold mb-10">
         {t('advantages_title')}

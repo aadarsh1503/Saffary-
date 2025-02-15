@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter> {/* Wrap the app with BrowserRouter */}
       <div>
         <DirectionProvider />\
-    
+    <MobileNavbar />
         <Navbar />
         <Routes> {/* Wrap Route components inside Routes */}
           <Route path="/" element={<Hero />} />
