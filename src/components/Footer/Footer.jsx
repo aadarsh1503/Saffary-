@@ -33,7 +33,7 @@ const Footer = () => {
               </Link>
               <button
                 className={`w-full max-w-xs left-[0.1px] mx-auto ${
-                  isRTL ? "-mr-1 " : "relative  right-10 "
+                  isRTL ? "-mr-1 " : "relative  right-10 lg:-left-10  "
                 } hover:text-lorange hover:outline-lorange outline font-semibold text-gray-700 py-3 px-10 rounded-full hover:bg-gray-100 whitespace-nowrap text-center`}
               >
                 {t("requestDemo")}
