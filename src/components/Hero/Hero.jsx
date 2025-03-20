@@ -69,10 +69,10 @@ const Hero = () => {
           <p className={`text-gray-600 mb-6 text-lg lg:text-xl ${i18n.language === 'ar' ? 'text-right mr-28' : ''}`}>
             {t("hero.description")}
           </p>
-          <button className={`bg-white text-lorange ${i18n.language === 'ar' ? 'text-right mr-28' : ''} text-lg mr-0 lg:ml-0 ml-[80px] lg:mr-72 relative right-0 lg:right-6 left-1 outline-lorange outline font-semibold px-2 lg:px-6 py-2  rounded-lg mb-4 shadow-md hover:bg-lorange hover:text-white flex items-center`}>
+          <button className={`bg-white text-lorange ${i18n.language === 'ar' ? 'text-right w-52 ' : ''} text-lg mr-0 lg:ml-0 ml-[80px] lg:mr-[240px] relative right-0 lg:right-6 left-1 outline-lorange outline font-semibold px-2 lg:px-6 py-2  rounded-lg mb-4 shadow-md hover:bg-lorange hover:text-white flex items-center`}>
       {t("hero.placeOrderButton")}
       {isRTL ? (
-        <FaArrowLeft className="text-lg ml-2 mr-3 mt-2" />
+        <FaArrowLeft className="text-lg ml-2 mr-3 mt-2 shrink-0" />
       ) : (
         <FaArrowRight className="text-lg ml-2 " />
       )}
@@ -83,11 +83,11 @@ const Hero = () => {
 
           <p className="text-gray-500 font-medium mb-4">{t("hero.downloadApp")}</p>
           <div className={`flex gap-4 ${isRTL ? "mr-[150px]" : ""}`}>
-  <button className="flex items-center gap-2 bg-lorange text-white lg:p-0 p-[9px] lg:px-6 py-3 rounded-lg text-xl font-semibold shadow hover:bg-gray-300">
+  <button className={`flex items-center gap-2 bg-lorange text-white ${isRTL ? "text-sm" : "text-xl"} lg:p-0 p-[9px] lg:px-6 py-3 rounded-lg  font-semibold shadow hover:bg-gray-300`}>
     <FontAwesomeIcon icon={faGooglePlay} className="w-5 h-5 mt-1" />
     {t("hero.googlePlay")}
   </button>
-  <button className="flex items-center gap-2 bg-lorange text-white px-6 py-3 text-xl rounded-lg font-semibold shadow hover:bg-gray-300">
+  <button className="flex items-center gap-2 bg-lorange text-white px-6 py-3  rounded-lg font-semibold shadow hover:bg-gray-300">
     <FontAwesomeIcon icon={faAppStore} className="w-5 h-5 mt-1" />
     {t("hero.appStore")}
   </button>

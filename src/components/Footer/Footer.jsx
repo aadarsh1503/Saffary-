@@ -87,8 +87,8 @@ const Footer = () => {
           {/* Right Section */}
           <div className="mb-8 md:mb-0 flex justify-between mt-0 lg:-mt-44 items-start">
          
-          <div className="grid grid-cols-2 ml-0  gap-4 mt-6">
-            <AiOutlineLinkedin className="text-orange-500 text-4xl cursor-pointer mr-4  hover:text-orange-600" />
+          <div className="grid grid-cols-2 ml-0  gap-6 mt-6">
+            <AiOutlineLinkedin className="text-orange-500 text-4xl shrink-0 cursor-pointer mr-4  hover:text-orange-600" />
             <FontAwesomeIcon icon={faXTwitter} className="text-orange-500 text-4xl  cursor-pointer hover:text-orange-600" />
             <AiOutlineInstagram className="text-orange-500 text-4xl cursor-pointer mr-4 hover:text-orange-600" />
             <a href="https://www.facebook.com/saffarystation/" target="_blank" rel="noopener noreferrer">
