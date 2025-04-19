@@ -47,8 +47,8 @@ const ContactPage = () => {
           {/* Chat Section */}
           <div className="text-center">
             <h3 className="text-lg font-semibold text-gray-800">{t("chat")}</h3>
-            <p className="text-sm text-gray-600">{t("responseTimeChat")}</p>
-            <p className="text-sm text-gray-600">{t("hoursChat")}</p>
+            <p className="text-md text-gray-600">{t("responseTimeChat")}</p>
+            <p className="text-md text-gray-600">{t("hoursChat")}</p>
           </div>
 
           {/* Telephone Section */}
@@ -61,8 +61,8 @@ const ContactPage = () => {
   >
     +973 33117441
   </a>
-  <p className="text-sm text-gray-600">{t("responseTimeTelephone")}</p>
-  <p className="text-sm text-gray-600">{t("hoursTelephone")}</p>
+  <p className="text-md text-gray-600">{t("responseTimeTelephone")}</p>
+  <p className="text-md text-gray-600">{t("hoursTelephone")}</p>
 </div>
 
           {/* Mail Section */}
@@ -74,8 +74,8 @@ const ContactPage = () => {
             >
               info@saffary.com
             </a>
-            <p className="text-sm text-gray-600">{t("responseTimeMail")}</p>
-            <p className="text-sm text-gray-600">{t("hoursMail")}</p>
+            <p className="text-md text-gray-600">{t("responseTimeMail")}</p>
+            <p className="text-md text-gray-600">{t("hoursMail")}</p>
           </div>
         </div>
       </div>

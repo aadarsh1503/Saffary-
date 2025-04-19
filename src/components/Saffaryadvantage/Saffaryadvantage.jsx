@@ -18,7 +18,7 @@ const Saffaryadvantage = () => {
           <div className="flex items-center mr-10 justify-end space-x-4">
             <div className="text-right">
               <h3 className="text-xl font-bold mb-2">{t('find_nearby_merchant_title')}</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-md text-gray-600">
                 {t('find_nearby_merchant_description')}
               </p>
             </div>
@@ -31,7 +31,7 @@ const Saffaryadvantage = () => {
           <div className="flex items-center mr-8 ml-8 justify-end space-x-4">
             <div className="text-right">
               <h3 className="text-xl font-bold mb-2">{t('no_commission_title')}</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-md text-gray-600">
                 {t('no_commission_description')}
               </p>
             </div>
@@ -44,7 +44,7 @@ const Saffaryadvantage = () => {
           <div className="flex items-center justify-end space-x-4 mr-8">
             <div className="text-right">
               <h3 className="text-xl font-bold mb-2">{t('easy_access_menu_title')}</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-md text-gray-600">
                 {t('easy_access_menu_description')}
               </p>
             </div>
@@ -75,7 +75,7 @@ const Saffaryadvantage = () => {
             />
             <div className="text-left">
               <h3 className="text-xl font-bold mb-2">{t('eat_now_pay_later_title')}</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-md text-gray-600">
                 {t('eat_now_pay_later_description')}
               </p>
             </div>
@@ -88,7 +88,7 @@ const Saffaryadvantage = () => {
             />
             <div className="text-left">
               <h3 className="text-xl font-bold mb-2">{t('quick_delivery_title')}</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-md text-gray-600">
                 {t('quick_delivery_description')}
               </p>
             </div>
@@ -102,7 +102,7 @@ const Saffaryadvantage = () => {
             />
             <div className="text-left">
               <h3 className="text-xl font-bold mb-2">{t('explore_title')}</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-md text-gray-600">
                 {t('explore_description')}
               </p>
             </div>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { useTranslation } from "react-i18next";
-
+import i111 from "./i111.png"
 const Footer = () => {
   const { t, i18n } = useTranslation(); // Initialize translation hook
   const isRTL = i18n.language === "ar"; // Check if the language is Arabic (RTL)
@@ -18,27 +18,25 @@ const Footer = () => {
           <div className="mb-8 ml-0 lg:-ml-8 md:mb-0">
             {/* Logo */}
             <div className="mb-4 ml-9 lg:ml-0">
-              <img src={g1} alt={t("logoAltText")} className="h-20" />
+              <img  src={isRTL ? i111 : g1}  alt={t("logoAltText")} className="h-20" />
             </div>
             <p className={`text-gray-700 ${
                   isRTL ? "text-sm break-words" : " text-lg"
                 }  lg:ml-0 ml-9 mb-6 `}>
               {t("saffaryDescription")}
             </p>
-            <div className="flex flex-col space-y-4">
-              <Link to="/becomeMerchant">
-                <button className="w-full max-w-xs ml-4 hover:text-lorange hover:outline-lorange outline mx-auto lg:ml-2 rounded-full font-semibold text-gray-700 py-3 px-10 hover:bg-gray-100 whitespace-nowrap text-center">
-                  {t("becomeMerchant")}
-                </button>
-              </Link>
-              <button
-                className={`w-full max-w-xs left-[0.1px] mx-auto ${
-                  isRTL ? "-mr-1 " : "relative  right-10 lg:-left-10  "
-                } hover:text-lorange hover:outline-lorange outline font-semibold text-gray-700 py-3 px-10 rounded-full hover:bg-gray-100 whitespace-nowrap text-center`}
-              >
-                {t("requestDemo")}
-              </button>
-            </div>
+            <div className="flex flex-col lg:-ml-24  ml-0  items-center space-y-4">
+  <Link to="/becomeMerchant" className="w-full max-w-xs">
+    <button className="w-full hover:text-lorange lg:-mr-28 mr-0 hover:outline-lorange outline mx-auto rounded-full font-semibold text-gray-700 py-3 px-10 hover:bg-gray-100 whitespace-nowrap text-center">
+      {t("becomeMerchant")}
+    </button>
+  </Link>
+  <button
+    className={`w-full max-w-xs hover:text-lorange ${i18n.language === 'ar' ? 'lg:mr-[8px] mr-0' : ''} hover:outline-lorange outline font-semibold text-gray-700 py-3 px-10 rounded-full hover:bg-gray-100 whitespace-nowrap text-center mx-auto`}
+  >
+    {t("requestDemo")}
+  </button>
+</div>
           </div>
 
           {/* Middle Section */}
@@ -88,9 +86,9 @@ const Footer = () => {
           <div className="mb-8 md:mb-0 flex justify-between mt-0 lg:-mt-44 items-start">
          
           <div className="grid grid-cols-2 ml-0  gap-6 mt-6">
-            <AiOutlineLinkedin className="text-orange-500 text-4xl shrink-0 cursor-pointer mr-4  hover:text-orange-600" />
+            <AiOutlineLinkedin className={`text-orange-500 text-4xl shrink-0 cursor-pointer mr-4 ${i18n.language === 'ar' ? 'relative left-4' : ''} hover:text-orange-600`} />
             <FontAwesomeIcon icon={faXTwitter} className="text-orange-500 text-4xl  cursor-pointer hover:text-orange-600" />
-            <AiOutlineInstagram className="text-orange-500 text-4xl cursor-pointer mr-4 hover:text-orange-600" />
+            <AiOutlineInstagram className={`text-orange-500 text-4xl cursor-pointer mr-4 ${i18n.language === 'ar' ? 'relative left-4' : ''} hover:text-orange-600 `} />
             <a href="https://www.facebook.com/saffarystation/" target="_blank" rel="noopener noreferrer">
               <AiOutlineFacebook className="text-orange-500 text-4xl cursor-pointer hover:text-orange-600" />
             </a>
