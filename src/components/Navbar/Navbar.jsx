@@ -134,7 +134,9 @@ const Navbar = () => {
               <Link to="/#markets" onClick={() => scrollToSection("markets")} className="hover:text-gray-600">
                 {t("markets")}
               </Link>
+              <div className="relative lg:-top-[3px] top-0">
               <LanguageToggle />
+              </div>
             </div>
           )}
 
