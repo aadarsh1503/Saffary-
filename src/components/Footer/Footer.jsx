@@ -15,7 +15,7 @@ const Footer = () => {
       <footer className="max-w-5xl mx-auto py-8">
         <div className="mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center">
           {/* Left Section */}
-          <div className="mb-8 ml-0 lg:-ml-8 md:mb-0">
+          <div className="mb-8 ml-0 lg:ml-8 md:mb-0">
             {/* Logo */}
             <div className="mb-4 ml-9 lg:ml-0">
               <img  src={isRTL ? i111 : g1}  alt={t("logoAltText")} className="h-20" />
@@ -32,7 +32,7 @@ const Footer = () => {
     </button>
   </Link>
   <button
-    className={`w-full max-w-xs hover:text-lorange ${i18n.language === 'ar' ? 'lg:mr-[8px] mr-0' : ''} hover:outline-lorange outline font-semibold text-gray-700 py-3 px-10 rounded-full hover:bg-gray-100 whitespace-nowrap text-center mx-auto`}
+    className={`w-full max-w-xs hover:text-lorange ${i18n.language === 'ar' ? 'lg:-mr-[13px] mr-0' : ''} hover:outline-lorange outline font-semibold text-gray-700 py-3 px-10 rounded-full hover:bg-gray-100 whitespace-nowrap text-center mx-auto`}
   >
     {t("requestDemo")}
   </button>

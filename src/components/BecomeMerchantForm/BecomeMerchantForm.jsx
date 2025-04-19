@@ -221,7 +221,7 @@ const BecomeMerchantForm = () => {
     className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
   >
     <FiUpload className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-    {isRTL ? "برانڈ لوگو *" : t("form.brandLogo")} *
+    {isRTL ? "برانڈ لوگو " : t("form.brandLogo")} *
   </label>
   <div className="mt-1 flex items-center">
     <label className="cursor-pointer">
