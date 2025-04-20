@@ -13,12 +13,12 @@ const OurStory = () => {
   }, [i18n.language]);
 
   const data = [
-    { date: "Dec 2023", content: t("storyContent1") },
-    { date: "Mar 2024", content: t("storyContent2") },
-    { date: "May 2024", content: t("storyContent3") },
-    { date: "Sep 2024", content: t("storyContent4") },
-    { date: "Jan 2025", content: t("storyContent5") },
-    { date: "Jan 2025", content: t("storyContent6") },
+    { date: "Feb 2020", content: t("storyContent1") },
+    { date: "Sept 2020", content: t("storyContent2") },
+    { date: "Dec 2020", content: t("storyContent3") },
+    { date: "March 2021", content: t("storyContent4") },
+    { date: "July 2021", content: t("storyContent5") },
+    { date: "Dec 2021", content: t("storyContent6") },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
