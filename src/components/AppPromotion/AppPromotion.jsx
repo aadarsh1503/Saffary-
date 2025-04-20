@@ -3,6 +3,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import g1 from "./g1.jpeg";
 import i1 from "./i1.png";
+import i2 from "./i2.png"
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { useEffect, useState } from "react";
 
@@ -18,10 +19,14 @@ function AppPromotion() {
   return (
     <div id="markets" className={`bg-lorange ${i18n.language === 'ar' ? 'text-right' : 'text-left'} text-white mb-10 rounded-2xl max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 py-8 md:px-12 gap-8`}>
       {/* Left Side Content */}
-      <div className={`flex flex-col items-center md:items-start space-y-4 ${i18n.language === 'ar' ? 'md:items-end mr-8' : 'md:items-start ml-8'}`}>
-        <img src={g1} alt="Saffary" className="h-20 w-auto ml-12" />
+      <div className={`flex flex-col items-center md:items-start space-y-4 ${i18n.language === 'ar' ? 'md:items-end lg:mr-8 ml-0' : 'md:items-start ml-0 lg:ml-8'}`}>
+  <img
+    src={i18n.language === 'ar' ? i2 : g1}
+    alt="Saffary"
+    className={`h-20 w-auto ${i18n.language === 'ar' ? 'lg:ml-12 mr-0' : 'lg:ml-12 ml-0'}`}
+  />
 
-        <button className={`bg-white text-lorange text-lg font-bold py-2 px-6 rounded-md shadow-md hover:bg-gray-100 transition flex items-center ${i18n.language === 'ar' ? 'flex-row-reverse ml-16 ' : 'ml-16'}`}>
+        <button className={`bg-white text-lorange text-lg font-bold py-2 px-6 rounded-md shadow-md hover:bg-gray-100 transition flex items-center ${i18n.language === 'ar' ? 'flex-row-reverse ml-0 lg:ml-16 ' : ' ml-0 lg:ml-16'}`}>
           {t("placeOrder")}
           {isRTL ? (
             <FaArrowLeft className="ml-2 mr-2" />

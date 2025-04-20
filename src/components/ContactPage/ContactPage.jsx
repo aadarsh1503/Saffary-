@@ -6,7 +6,7 @@ const ContactPage = () => {
   const { t } = useTranslation();
 
   return (
-    <div id="contact" className={` ${i18n.language === 'ar' ? 'text-right relative lg:right-0 right-32 ' : ''}`}>
+    <div id="contact" className={` ${i18n.language === 'ar' ? 'text-right relative lg:right-0  ' : ''}`}>
       {/* Heading */}
       <h1 className="text-white">
         {t("hello")}
@@ -22,7 +22,7 @@ const ContactPage = () => {
 
       {/* Map Section */}
       <div className={``}>
-        <div className={`flex shadow-custom ${i18n.language === 'ar' ? 'text-right relative lg:right-0 right-10 ' : ''} rounded-xl flex-col w-3/4 mr-0 ml-12 lg:mr-[180px] lg:ml-[180px] items-center space-y-4 mb-20`}>
+        <div className={`flex shadow-custom ${i18n.language === 'ar' ? 'text-right relative lg:right-0  ' : ''} rounded-xl flex-col w-4/4 lg:p-0 p-4 mr-0  lg:mr-[180px] lg:ml-[180px] items-center space-y-4 mb-20`}>
           {/* Map Section */}
           <iframe
             title="Google Map"

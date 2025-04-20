@@ -65,7 +65,7 @@ const HowItWorks = () => {
   return (
     <div id="steps" className="flex flex-col sm:flex-row items-start min-h-screen justify-between w-full bg-white">
       {/* Left Side */}
-      <div className="w-full sm:w-1/2 p-6 sm:ml-32 mr-32">
+      <div className="w-full sm:w-1/2 p-6 sm:ml-32 ">
         <h2 className="text-4xl font-bold mb-6">{t("howItWorksTitle")}</h2>
         <ul className="space-y-8">
           {steps.map((step) => (

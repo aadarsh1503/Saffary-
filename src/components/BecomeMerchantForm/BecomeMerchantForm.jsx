@@ -62,7 +62,7 @@ const BecomeMerchantForm = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`bg-gradient-to-b from-gray-50 to-white py-16 px-6 lg:mt-20 mt-0 lg:px-24 ${isRTL ? "text-right" : "text-left"}`}
+      className={`bg-gradient-to-b from-gray-50 to-white py-16 px-6  lg:mt-20 mt-20 lg:px-24 ${isRTL ? "text-right" : "text-left"}`}
       dir={isRTL ? "rtl" : "ltr"}
     >
       <motion.div 

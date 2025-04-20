@@ -38,7 +38,7 @@ const OurStory = () => {
   const visibleCards = data.slice(currentIndex, currentIndex + 3);
 
   return (
-    <div id="story" className={`bg-orange-500  ${i18n.language === 'ar' ? 'text-right relative lg:right-0 right-32 ' : ''} text-white py-10 px-4`}>
+    <div id="story" className={`bg-orange-500  ${i18n.language === 'ar' ? 'text-right relative lg:right-0  ' : ''} text-white py-10 px-4`}>
       <h1 className="text-7xl text-orange-500">{t("hi")}</h1>
 
       <div className="max-w-5xl mx-auto">
@@ -64,7 +64,7 @@ const OurStory = () => {
             {(window.innerWidth <= 640 ? data : visibleCards).map((item, index) => (
               <div
                 key={index}
-                className="bg-white text-orange-500 rounded-lg ml-4 shadow-lg lg:w-[350px] lg:h-[300px] lg:p-4 p-3 sm:w-[450px] h-[400px]"
+                className="bg-white text-orange-500 rounded-lg ml-4 shadow-lg lg:w-[350px] lg:h-[300px] lg:p-4 p-3 sm:w-full h-[400px]"
               >
                 <div className="flex items-center space-x-2 mb-4">
                   <span className="bg-lorange text-white font-semibold py-1 px-3 rounded-full text-sm">

@@ -7,7 +7,7 @@ const RealTimeStats = () => {
   const { t } = useTranslation();  // Use the translation hook
 
   return (
-    <div className={`text-7xl ${i18n.language === 'ar' ? 'text-right relative lg:right-0 right-32 ' : ''} text-white`}> 
+    <div className={`text-7xl ${i18n.language === 'ar' ? 'text-right relative lg:right-0  ' : ''} text-white`}> 
       <div id="glance" className="flex flex-col font-poppins mb-4 lg:mb-2 sm:flex-row items-center justify-between bg-white p-4 rounded-md w-full">
         
         {/* Left Side */}

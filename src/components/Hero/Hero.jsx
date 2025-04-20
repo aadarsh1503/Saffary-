@@ -72,7 +72,7 @@ const Hero = () => {
             {t("hero.description")}
           </p>
           
-          <button className={`bg-white text-lorange text-lg outline-lorange outline font-semibold px-6 py-2 rounded-lg mb-4 shadow-md hover:bg-lorange hover:text-white flex items-center ${isRTL ? 'flex-row-reverse ml-auto' : 'mr-auto'}`}>
+          <button className={`bg-white text-lorange lg:ml-0 ml-16 text-lg outline-lorange outline font-semibold px-6 py-2 rounded-lg mb-4 shadow-md hover:bg-lorange hover:text-white flex items-center ${isRTL ? 'flex-row-reverse ml-auto' : 'mr-auto'}`}>
             {t("hero.placeOrderButton")}
             {isRTL ? (
               <FaArrowLeft className="text-lg ml-2" />

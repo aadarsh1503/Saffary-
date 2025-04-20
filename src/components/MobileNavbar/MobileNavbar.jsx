@@ -46,7 +46,7 @@ const MobileMenu = ({ toggleMobileMenu, isOpen }) => {
         <Link to="/contact" onClick={toggleMobileMenu} className="hover:text-gray-300">
           {t("contact")}
         </Link>
-        
+        <LanguageToggle />
       </div>
     </div>
   );
