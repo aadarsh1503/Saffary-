@@ -69,6 +69,7 @@ const RequestEarlyAccess = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
+      dir={isRTL ? "rtl" : "ltr"}
     >
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
         <motion.div 
@@ -80,31 +81,43 @@ const RequestEarlyAccess = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
             {t("Request Early Access")}
           </h2>
-         
         </motion.div>
 
         <motion.form
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-8 rounded-xl "
+          className={`grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-8 rounded-xl ${isRTL ? "text-right" : "text-left"}`}
           onSubmit={handleSubmit}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
+          dir={isRTL ? "rtl" : "ltr"}
         >
           {/* City Input */}
           <motion.div variants={itemVariants}>
             <label
               htmlFor="city"
-              className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+              className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? "text-right" : "text-left"}`}
             >
-              <FiMapPin className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-              {t("City")} *
+              <div className={`flex ${isRTL ? "flex-row-reverse justify-end" : ""}`}>
+                {isRTL ? (
+                  <>
+                    {t("City")} *
+                    <FiMapPin className="ml-2 mt-1" />
+                  </>
+                ) : (
+                  <>
+                    <FiMapPin className="mr-2 mt-1" />
+                    {t("City")} *
+                  </>
+                )}
+              </div>
             </label>
             <input
               type="text"
               id="city"
               placeholder={t("Enter City")}
-              className="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200"
+              className={`mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200 ${isRTL ? "text-right" : "text-left"}`}
               required
+              dir={isRTL ? "rtl" : "ltr"}
             />
           </motion.div>
 
@@ -112,17 +125,29 @@ const RequestEarlyAccess = () => {
           <motion.div variants={itemVariants}>
             <label
               htmlFor="area"
-              className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+              className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? "text-right" : "text-left"}`}
             >
-              <FiHome className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-              {t("Area")} *
+              <div className={`flex ${isRTL ? "flex-row-reverse justify-end" : ""}`}>
+                {isRTL ? (
+                  <>
+                    {t("Area")} *
+                    <FiHome className="ml-2 mt-1" />
+                  </>
+                ) : (
+                  <>
+                    <FiHome className="mr-2 mt-1" />
+                    {t("Area")} *
+                  </>
+                )}
+              </div>
             </label>
             <input
               type="text"
               id="area"
               placeholder={t("Enter Area")}
-              className="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200"
+              className={`mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200 ${isRTL ? "text-right" : "text-left"}`}
               required
+              dir={isRTL ? "rtl" : "ltr"}
             />
           </motion.div>
 
@@ -130,17 +155,29 @@ const RequestEarlyAccess = () => {
           <motion.div variants={itemVariants}>
             <label
               htmlFor="locality"
-              className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+              className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? "text-right" : "text-left"}`}
             >
-              <FiBriefcase className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-              {t("Locality/Office")} *
+              <div className={`flex ${isRTL ? "flex-row-reverse justify-end" : ""}`}>
+                {isRTL ? (
+                  <>
+                    {t("Locality/Office")} *
+                    <FiBriefcase className="ml-2 mt-1" />
+                  </>
+                ) : (
+                  <>
+                    <FiBriefcase className="mr-2 mt-1" />
+                    {t("Locality/Office")} *
+                  </>
+                )}
+              </div>
             </label>
             <input
               type="text"
               id="locality"
               placeholder={t("Enter Locality/Office")}
-              className="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200"
+              className={`mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200 ${isRTL ? "text-right" : "text-left"}`}
               required
+              dir={isRTL ? "rtl" : "ltr"}
             />
           </motion.div>
 
@@ -148,17 +185,29 @@ const RequestEarlyAccess = () => {
           <motion.div variants={itemVariants}>
             <label
               htmlFor="comment"
-              className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+              className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? "text-right" : "text-left"}`}
             >
-              <FiMessageSquare className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-              {t("Comment")} *
+              <div className={`flex ${isRTL ? "flex-row-reverse justify-end" : ""}`}>
+                {isRTL ? (
+                  <>
+                    {t("Comment")} *
+                    <FiMessageSquare className="ml-2 mt-1" />
+                  </>
+                ) : (
+                  <>
+                    <FiMessageSquare className="mr-2 mt-1" />
+                    {t("Comment")} *
+                  </>
+                )}
+              </div>
             </label>
             <input
               type="text"
               id="comment"
               placeholder={t("Enter Comment")}
-              className="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200"
+              className={`mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200 ${isRTL ? "text-right" : "text-left"}`}
               required
+              dir={isRTL ? "rtl" : "ltr"}
             />
           </motion.div>
 
@@ -166,17 +215,29 @@ const RequestEarlyAccess = () => {
           <motion.div variants={itemVariants}>
             <label
               htmlFor="email"
-              className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+              className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? "text-right" : "text-left"}`}
             >
-              <FiMail className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-              {t("Email")} *
+              <div className={`flex ${isRTL ? "flex-row-reverse justify-end" : ""}`}>
+                {isRTL ? (
+                  <>
+                    {t("Email")} *
+                    <FiMail className="ml-2 mt-1" />
+                  </>
+                ) : (
+                  <>
+                    <FiMail className="mr-2 mt-1" />
+                    {t("Email")} *
+                  </>
+                )}
+              </div>
             </label>
             <input
               type="email"
               id="email"
               placeholder={t("Enter Email")}
-              className="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200"
+              className={`mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200 ${isRTL ? "text-right" : "text-left"}`}
               required
+              dir={isRTL ? "rtl" : "ltr"}
             />
           </motion.div>
 
@@ -184,17 +245,29 @@ const RequestEarlyAccess = () => {
           <motion.div variants={itemVariants}>
             <label
               htmlFor="mobile"
-              className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+              className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? "text-right" : "text-left"}`}
             >
-              <FiPhone className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-              {t("Mobile Number")} *
+              <div className={`flex ${isRTL ? "flex-row-reverse justify-end" : ""}`}>
+                {isRTL ? (
+                  <>
+                    {t("Mobile Number")} *
+                    <FiPhone className="ml-2 mt-1" />
+                  </>
+                ) : (
+                  <>
+                    <FiPhone className="mr-2 mt-1" />
+                    {t("Mobile Number")} *
+                  </>
+                )}
+              </div>
             </label>
             <input
               type="tel"
               id="mobile"
               placeholder={t("Enter Mobile Number")}
-              className="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200"
+              className={`mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200 ${isRTL ? "text-right" : "text-left"}`}
               required
+              dir={isRTL ? "rtl" : "ltr"}
             />
           </motion.div>
 
@@ -216,7 +289,7 @@ const RequestEarlyAccess = () => {
           >
             <motion.button
               type="submit"
-              className={`w-full md:w-1/3 px-6 py-3 rounded-lg shadow-sm transition duration-200 flex items-center justify-center space-x-2 ${
+              className={`w-full md:w-1/3 px-6 py-3 rounded-lg shadow-sm transition duration-200 flex items-center justify-center ${isRTL ? "space-x-reverse space-x-2" : "space-x-2"} ${
                 isSubmitting 
                   ? "bg-indigo-400 cursor-not-allowed" 
                   : recaptchaVerified 
@@ -232,15 +305,15 @@ const RequestEarlyAccess = () => {
             >
               {isSubmitting ? (
                 <>
-                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  {t("Processing...")}
+                  <span>{t("Processing...")}</span>
                 </>
               ) : (
                 <>
-                  <FiSend />
+                  <FiSend className={isRTL ? "order-last" : ""} />
                   <span>{t("Submit")}</span>
                 </>
               )}

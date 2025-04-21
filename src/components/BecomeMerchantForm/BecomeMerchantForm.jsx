@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect , useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { FiBriefcase, FiMail, FiPhone, FiMapPin, FiHome, FiFileText, FiUpload } from "react-icons/fi";
 
+
 const BecomeMerchantForm = () => {
   const { t, i18n } = useTranslation();
   const isRTL = i18n.language === "ar";
+  const [selectedFileName, setSelectedFileName] = useState("");
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -62,7 +64,7 @@ const BecomeMerchantForm = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`bg-gradient-to-b from-gray-50 to-white py-16 px-6  lg:mt-20 mt-20 lg:px-24 ${isRTL ? "text-right" : "text-left"}`}
+      className={`bg-gradient-to-b from-gray-50 to-white py-16 px-6 lg:mt-20 mt-20 lg:px-24 ${isRTL ? "text-right" : "text-left"}`}
       dir={isRTL ? "rtl" : "ltr"}
     >
       <motion.div 
@@ -80,29 +82,41 @@ const BecomeMerchantForm = () => {
           {t("form.title")}
         </motion.h2>
        
-
         <motion.form
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6 bg-white p-8 rounded-xl "
+          className={`grid grid-cols-1 lg:grid-cols-3 gap-6 bg-white p-8 rounded-xl ${isRTL ? "text-right" : "text-left"}`}
           onSubmit={handleSubmit}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
+          dir={isRTL ? "rtl" : "ltr"}
         >
           {/* Business Name */}
           <motion.div variants={itemVariants}>
             <label
               htmlFor="businessName"
-              className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+              className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? "text-right" : "text-left"}`}
             >
-              <FiBriefcase className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-              {t("form.businessName")} *
+              <div className={`flex ${isRTL ? "flex-row-reverse justify-end" : ""}`}>
+                {isRTL ? (
+                  <>
+                    {t("form.businessName")} *
+                    <FiBriefcase className="ml-2 mt-1" />
+                  </>
+                ) : (
+                  <>
+                    <FiBriefcase className="mr-2 mt-1" />
+                    {t("form.businessName")} *
+                  </>
+                )}
+              </div>
             </label>
             <input
               type="text"
               id="businessName"
               placeholder={t("form.businessNamePlaceholder")}
-              className="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200"
+              className={`mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200 ${isRTL ? "text-right" : "text-left"}`}
               required
+              dir={isRTL ? "rtl" : "ltr"}
             />
           </motion.div>
 
@@ -110,17 +124,29 @@ const BecomeMerchantForm = () => {
           <motion.div variants={itemVariants}>
             <label
               htmlFor="email"
-              className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+              className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? "text-right" : "text-left"}`}
             >
-              <FiMail className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-              {t("form.email")} *
+              <div className={`flex ${isRTL ? "flex-row-reverse justify-end" : ""}`}>
+                {isRTL ? (
+                  <>
+                    {t("form.email")} *
+                    <FiMail className="ml-2 mt-1" />
+                  </>
+                ) : (
+                  <>
+                    <FiMail className="mr-2 mt-1" />
+                    {t("form.email")} *
+                  </>
+                )}
+              </div>
             </label>
             <input
               type="email"
               id="email"
               placeholder={t("form.emailPlaceholder")}
-              className="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200"
+              className={`mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200 ${isRTL ? "text-right" : "text-left"}`}
               required
+              dir={isRTL ? "rtl" : "ltr"}
             />
           </motion.div>
 
@@ -128,17 +154,29 @@ const BecomeMerchantForm = () => {
           <motion.div variants={itemVariants}>
             <label
               htmlFor="mobile"
-              className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+              className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? "text-right" : "text-left"}`}
             >
-              <FiPhone className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-              {t("form.mobileNumber")} *
+              <div className={`flex ${isRTL ? "flex-row-reverse justify-end" : ""}`}>
+                {isRTL ? (
+                  <>
+                    {t("form.mobileNumber")} *
+                    <FiPhone className="ml-2 mt-1" />
+                  </>
+                ) : (
+                  <>
+                    <FiPhone className="mr-2 mt-1" />
+                    {t("form.mobileNumber")} *
+                  </>
+                )}
+              </div>
             </label>
             <input
               type="tel"
               id="mobile"
               placeholder={t("form.mobileNumberPlaceholder")}
-              className="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200"
+              className={`mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200 ${isRTL ? "text-right" : "text-left"}`}
               required
+              dir={isRTL ? "rtl" : "ltr"}
             />
           </motion.div>
 
@@ -146,17 +184,29 @@ const BecomeMerchantForm = () => {
           <motion.div variants={itemVariants}>
             <label
               htmlFor="typeOfBusiness"
-              className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+              className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? "text-right" : "text-left"}`}
             >
-              <FiBriefcase className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-              {t("form.typeOfBusiness")} *
+              <div className={`flex ${isRTL ? "flex-row-reverse justify-end" : ""}`}>
+                {isRTL ? (
+                  <>
+                    {t("form.typeOfBusiness")} *
+                    <FiBriefcase className="ml-2 mt-1" />
+                  </>
+                ) : (
+                  <>
+                    <FiBriefcase className="mr-2 mt-1" />
+                    {t("form.typeOfBusiness")} *
+                  </>
+                )}
+              </div>
             </label>
             <input
               type="text"
               id="typeOfBusiness"
               placeholder={t("form.typeOfBusinessPlaceholder")}
-              className="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200"
+              className={`mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200 ${isRTL ? "text-right" : "text-left"}`}
               required
+              dir={isRTL ? "rtl" : "ltr"}
             />
           </motion.div>
 
@@ -164,17 +214,29 @@ const BecomeMerchantForm = () => {
           <motion.div variants={itemVariants}>
             <label
               htmlFor="address"
-              className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+              className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? "text-right" : "text-left"}`}
             >
-              <FiMapPin className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-              {t("form.address")} *
+              <div className={`flex ${isRTL ? "flex-row-reverse justify-end" : ""}`}>
+                {isRTL ? (
+                  <>
+                    {t("form.address")} *
+                    <FiMapPin className="ml-2 mt-1" />
+                  </>
+                ) : (
+                  <>
+                    <FiMapPin className="mr-2 mt-1" />
+                    {t("form.address")} *
+                  </>
+                )}
+              </div>
             </label>
             <input
               type="text"
               id="address"
               placeholder={t("form.addressPlaceholder")}
-              className="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200"
+              className={`mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200 ${isRTL ? "text-right" : "text-left"}`}
               required
+              dir={isRTL ? "rtl" : "ltr"}
             />
           </motion.div>
 
@@ -182,17 +244,29 @@ const BecomeMerchantForm = () => {
           <motion.div variants={itemVariants}>
             <label
               htmlFor="state"
-              className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+              className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? "text-right" : "text-left"}`}
             >
-              <FiHome className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-              {t("form.state")} *
+              <div className={`flex ${isRTL ? "flex-row-reverse justify-end" : ""}`}>
+                {isRTL ? (
+                  <>
+                    {t("form.state")} *
+                    <FiHome className="ml-2 mt-1" />
+                  </>
+                ) : (
+                  <>
+                    <FiHome className="mr-2 mt-1" />
+                    {t("form.state")} *
+                  </>
+                )}
+              </div>
             </label>
             <input
               type="text"
               id="state"
               placeholder={t("form.statePlaceholder")}
-              className="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200"
+              className={`mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200 ${isRTL ? "text-right" : "text-left"}`}
               required
+              dir={isRTL ? "rtl" : "ltr"}
             />
           </motion.div>
 
@@ -200,17 +274,29 @@ const BecomeMerchantForm = () => {
           <motion.div variants={itemVariants}>
             <label
               htmlFor="city"
-              className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+              className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? "text-right" : "text-left"}`}
             >
-              <FiMapPin className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-              {t("form.city")} *
+              <div className={`flex ${isRTL ? "flex-row-reverse justify-end" : ""}`}>
+                {isRTL ? (
+                  <>
+                    {t("form.city")} *
+                    <FiMapPin className="ml-2 mt-1" />
+                  </>
+                ) : (
+                  <>
+                    <FiMapPin className="mr-2 mt-1" />
+                    {t("form.city")} *
+                  </>
+                )}
+              </div>
             </label>
             <input
               type="text"
               id="city"
               placeholder={t("form.cityPlaceholder")}
-              className="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200"
+              className={`mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200 ${isRTL ? "text-right" : "text-left"}`}
               required
+              dir={isRTL ? "rtl" : "ltr"}
             />
           </motion.div>
 
@@ -218,26 +304,49 @@ const BecomeMerchantForm = () => {
           <motion.div variants={itemVariants}>
   <label
     htmlFor="brandLogo"
-    className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+    className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? "text-right" : "text-left"}`}
   >
-    <FiUpload className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-    {isRTL ? "برانڈ لوگو " : t("form.brandLogo")} *
+    <div className={`flex items-center ${isRTL ? "flex-row-reverse justify-end" : ""}`}>
+      {isRTL ? (
+        <>
+          برانڈ لوگو *
+          <FiUpload className="ml-2" />
+        </>
+      ) : (
+        <>
+          <FiUpload className="mr-2" />
+          {t("form.brandLogo")} *
+        </>
+      )}
+    </div>
   </label>
-  <div className="mt-1 flex items-center">
-    <label className="cursor-pointer">
-      <span className="sr-only">{isRTL ? "برانڈ لوگو" : t("form.brandLogo")}</span>
-      <input
-        type="file"
-        id="brandLogo"
-        className="block w-full text-sm text-gray-500
-          file:mr-4 file:py-2 file:px-4
-          file:rounded-md file:border-0
-          file:text-sm file:font-semibold
-          file:bg-indigo-50 file:text-indigo-700
-          hover:file:bg-indigo-100 transition duration-200"
-        required
-      />
+
+  <div className="mt-1 flex items-center gap-4">
+    <label
+      htmlFor="brandLogo"
+      className="cursor-pointer text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md text-sm font-semibold transition duration-200"
+    >
+      {isRTL ? "اختر ملفًا" : "Choose File"}
     </label>
+
+    <span className="text-sm text-gray-500">
+      {selectedFileName
+        ? selectedFileName
+        : isRTL
+        ? "لم يتم اختيار ملف"
+        : "No file chosen"}
+    </span>
+
+    <input
+      type="file"
+      id="brandLogo"
+      className="hidden"
+      required
+      dir={isRTL ? "rtl" : "ltr"}
+      onChange={(e) =>
+        setSelectedFileName(e.target.files[0]?.name || "")
+      }
+    />
   </div>
 </motion.div>
 
@@ -245,16 +354,28 @@ const BecomeMerchantForm = () => {
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <label
               htmlFor="comments"
-              className={`block text-sm font-medium text-gray-700 mb-1 flex items-center ${isRTL ? "flex-row-reverse" : ""}`}
+              className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? "text-right" : "text-left"}`}
             >
-              <FiFileText className={`mr-2 ${isRTL ? "ml-2 mr-0" : ""}`} />
-              {t("form.comments")}
+              <div className={`flex ${isRTL ? "flex-row-reverse justify-end" : ""}`}>
+                {isRTL ? (
+                  <>
+                    {t("form.comments")}
+                    <FiFileText className="ml-2 mt-1" />
+                  </>
+                ) : (
+                  <>
+                    <FiFileText className="mr-2 mt-1" />
+                    {t("form.comments")}
+                  </>
+                )}
+              </div>
             </label>
             <textarea
               id="comments"
               placeholder={t("form.commentsPlaceholder")}
-              className="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200"
+              className={`mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition duration-200 ${isRTL ? "text-right" : "text-left"}`}
               rows="3"
+              dir={isRTL ? "rtl" : "ltr"}
             ></textarea>
           </motion.div>
 
