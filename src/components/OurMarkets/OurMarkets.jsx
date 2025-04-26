@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
-import i1 from "./i1.png";
+import i33 from "./i33.jpg";
 import i18n from "../../i18n";
 
 const OurMarkets = () => {
@@ -20,9 +20,9 @@ const OurMarkets = () => {
         {/* Central Image */}
         <div className="flex justify-center">
           <img
-            src={i1}
+            src={i33}
             alt={t('ourMarkets')}
-            className="w-[300px] lg:w-[500px] max-w-2xl h-[300px] lg:h-[500px] rounded-lg"
+            className="w-[300px] lg:w-[700px] max-w-2xl h-[300px] lg:h-[700px] rounded-lg"
           />
         </div>
       </div>
