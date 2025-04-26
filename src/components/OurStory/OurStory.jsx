@@ -14,7 +14,7 @@ const OurStory = () => {
 
   const data = [
     { date: "Feb 2020", content: t("storyContent1") },
-    { date: "Sept 2020", content: t("storyContent2") },
+    { date: "March 2020", content: t("storyContent2") },
     { date: "Dec 2020", content: t("storyContent3") },
     { date: "March 2021", content: t("storyContent4") },
     { date: "July 2021", content: t("storyContent5") },
