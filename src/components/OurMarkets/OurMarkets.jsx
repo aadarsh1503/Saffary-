@@ -15,7 +15,7 @@ const OurMarkets = () => {
 
   return (
     <section id="markets" className={`bg-white   ${i18n.language === 'ar' ? 'text-right relative lg:right-0  ' : ''} mt-20`}>
-      <div className="container mx-auto px-6 md:px-12 text-left">
+      <div className="container mx-auto px-6 md:px-12 ">
         {/* Heading Section */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
           {t('ourMarkets')}
