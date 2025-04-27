@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import { useTranslation } from 'react-i18next';
 import i33 from "./i33.jpg";
 import i18n from "../../i18n";
-
+import i4 from "./i4.png"
 const OurMarkets = () => {
-  const { t } = useTranslation();  // Use the translation hook
+  const { t, i18n } = useTranslation();
+  
+  const [isRTL, setIsRTL] = useState(i18n.language === 'ar');
+
+  useEffect(() => {
+    setIsRTL(i18n.language === 'ar');
+    document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+  }, [i18n.language]);
 
   return (
     <section id="markets" className={`bg-white   ${i18n.language === 'ar' ? 'text-right relative lg:right-0  ' : ''} mt-20`}>
@@ -20,10 +27,11 @@ const OurMarkets = () => {
         {/* Central Image */}
         <div className="flex justify-center">
           <img
-            src={i33}
+            src={isRTL ? i4 : i33}
             alt={t('ourMarkets')}
             className="w-[300px] lg:w-[700px] max-w-2xl h-[300px] lg:h-[700px] rounded-lg"
           />
+
         </div>
       </div>
     </section>
