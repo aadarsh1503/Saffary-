@@ -5,55 +5,43 @@ import i18n from "../../i18n";
 
 const Saffaryadvantage = () => {
   const { t } = useTranslation();
+  const isRTL = i18n.language === 'ar';
 
   return (
-    <div id="advantages" className={`bg-white  ${i18n.language === 'ar' ? 'text-right relative lg:right-0  ' : ''} py-10 px-5 mb-16 lg:px-20 max-w-7xl mx-auto`}>
+    <div id="advantages" className={`bg-white ${isRTL ? 'text-right' : 'text-left'} py-10 px-5 mb-16 lg:px-20 max-w-7xl mx-auto`}>
       <h1 className='text-7xl text-white'>{t('hiii')}</h1>
-      <h2 className="text-center text-2xl lg:text-4xl font-bold mb-10">
+      <h2 className={`text-center text-2xl lg:text-4xl font-bold mb-10`}>
         {t('advantages_title')}
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 items-center">
-        {/* Left Items */}
+        {/* Left Items - Special text alignment */}
         <div className="flex flex-col space-y-8">
-          <div className="flex items-center mr-10 justify-end space-x-4">
-            <div className="text-right">
-              <h3 className="text-xl font-bold mb-2">{t('find_nearby_merchant_title')}</h3>
-              <p className="text-md text-gray-600">
-                {t('find_nearby_merchant_description')}
-              </p>
+          {[1, 2, 3].map((item) => (
+            <div key={item} className={`flex items-center ${isRTL ? 'flex-row-reverse' : ''} space-x-4 space-x-reverse`}>
+              {/* Notice the reversed text alignment here */}
+              <div className={isRTL ? 'text-left' : 'text-right'}>
+                <h3 className="text-xl font-bold mb-2">
+                  {t(item === 1 ? 'find_nearby_merchant_title' : 
+                     item === 2 ? 'no_commission_title' : 
+                     'easy_access_menu_title')}
+                </h3>
+                <p className="text-md text-gray-600">
+                  {t(item === 1 ? 'find_nearby_merchant_description' : 
+                     item === 2 ? 'no_commission_description' : 
+                     'easy_access_menu_description')}
+                </p>
+              </div>
+              <img
+                src={item === 1 ? "https://www.ordercoro.com/assets/Advantage1_coro.png" : 
+                      item === 2 ? "https://www.ordercoro.com/assets/Advantage2_coro.png" : 
+                      "https://www.ordercoro.com/assets/many.svg"}
+                alt={item === 1 ? "Find Nearby Merchant" : 
+                     item === 2 ? "No Commission" : 
+                     "Eat Now & Pay Later"}
+                className="w-20 h-20"
+              />
             </div>
-            <img
-              src="https://www.ordercoro.com/assets/Advantage1_coro.png"
-              alt="Find Nearby Merchant"
-              className="w-20 h-20"
-            />
-          </div>
-          <div className="flex items-center mr-8 ml-8 justify-end space-x-4">
-            <div className="text-right">
-              <h3 className="text-xl font-bold mb-2">{t('no_commission_title')}</h3>
-              <p className="text-md text-gray-600">
-                {t('no_commission_description')}
-              </p>
-            </div>
-            <img
-              src="https://www.ordercoro.com/assets/Advantage2_coro.png"
-              alt="No Commission"
-              className="w-20 h-20"
-            />
-          </div>
-          <div className="flex items-center justify-end space-x-4 mr-8">
-            <div className="text-right">
-              <h3 className="text-xl font-bold mb-2">{t('easy_access_menu_title')}</h3>
-              <p className="text-md text-gray-600">
-                {t('easy_access_menu_description')}
-              </p>
-            </div>
-            <img
-              src="https://www.ordercoro.com/assets/many.svg"
-              alt="Eat Now & Pay Later"
-              className="w-20 h-20"
-            />
-          </div>
+          ))}
         </div>
 
         {/* Center Image */}
@@ -65,48 +53,33 @@ const Saffaryadvantage = () => {
           />
         </div>
 
-        {/* Right Items */}
+        {/* Right Items - Normal text alignment */}
         <div className="flex flex-col space-y-8">
-          <div className="flex items-center mr-2 space-x-4">
-            <img
-              src="https://www.ordercoro.com/assets/Advantage4_coro.png"
-              alt="Easy Access to Menu"
-              className="w-20 h-20"
-            />
-            <div className="text-left">
-              <h3 className="text-xl font-bold mb-2">{t('eat_now_pay_later_title')}</h3>
-              <p className="text-md text-gray-600">
-                {t('eat_now_pay_later_description')}
-              </p>
+          {[4, 5, 6].map((item) => (
+            <div key={item} className={`flex items-center ${isRTL ? 'flex-row-reverse' : ''} space-x-4 space-x-reverse`}>
+              <img
+                src={item === 4 ? "https://www.ordercoro.com/assets/Advantage4_coro.png" : 
+                      item === 5 ? "https://www.ordercoro.com/assets/Advantage5_coro.png" : 
+                      "https://www.ordercoro.com/assets/BeUpToDate.svg"}
+                alt={item === 4 ? "Easy Access to Menu" : 
+                     item === 5 ? "Quick Delivery" : 
+                     "Explore"}
+                className="w-20 h-20"
+              />
+              <div className={isRTL ? 'text-right' : 'text-left'}>
+                <h3 className="text-xl font-bold mb-2">
+                  {t(item === 4 ? 'eat_now_pay_later_title' : 
+                     item === 5 ? 'quick_delivery_title' : 
+                     'explore_title')}
+                </h3>
+                <p className="text-md text-gray-600">
+                  {t(item === 4 ? 'eat_now_pay_later_description' : 
+                     item === 5 ? 'quick_delivery_description' : 
+                     'explore_description')}
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="flex items-center space-x-4">
-            <img
-              src="https://www.ordercoro.com/assets/Advantage5_coro.png"
-              alt="Quick Delivery"
-              className="w-20 h-20"
-            />
-            <div className="text-left">
-              <h3 className="text-xl font-bold mb-2">{t('quick_delivery_title')}</h3>
-              <p className="text-md text-gray-600">
-                {t('quick_delivery_description')}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center space-x-4">
-            <img
-              src="https://www.ordercoro.com/assets/BeUpToDate.svg"
-              alt="Explore"
-              className="w-20 h-20"
-            />
-            <div className="text-left">
-              <h3 className="text-xl font-bold mb-2">{t('explore_title')}</h3>
-              <p className="text-md text-gray-600">
-                {t('explore_description')}
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
