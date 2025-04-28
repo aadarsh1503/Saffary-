@@ -99,7 +99,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-gray-300 mt-8 pt-4 text-center">
           <p className="text-gray-600 text-sm">
-            {t("copyright")} © 2025 Saffary. {t("allRightsReserved")}
+            {t("copyright")} © 2025 {t("Saffary")}. {t("allRightsReserved")}
           </p>
         </div>
       </footer>

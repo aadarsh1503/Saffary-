@@ -65,7 +65,7 @@ const HowItWorks = () => {
   return (
     <div id="steps" className="flex flex-col sm:flex-row items-start min-h-screen justify-between w-full bg-white">
       {/* Left Side */}
-      <div className="w-full sm:w-1/2 p-6 sm:ml-32 ">
+      <div className="w-full sm:w-1/2 p-6 sm:ml-32 sm:mr-32 mx-auto  ">
         <h2 className="text-4xl font-bold mb-6">{t("howItWorksTitle")}</h2>
         <ul className="space-y-8">
           {steps.map((step) => (
@@ -93,7 +93,7 @@ const HowItWorks = () => {
       </div>
 
       {/* Right Side */}
-      <div className={`relative w-full shadow-custom rounded-xl lg:w-2/5 mx-auto ${i18n.language === 'ar' ? 'lg:ml-32' : 'lg:mr-32'} mb-10`}>
+      <div className={`relative w-full shadow-custom shrink-0 rounded-xl lg:w-2/5 mx-auto ${i18n.language === 'ar' ? 'lg:ml-32' : 'lg:mr-32'} mb-10`}>
       <div className={`relative bg-white rounded-xl overflow-hidden transition-all duration-300 ease-in-out
                   shadow-[0_15px_30px_-10px_rgba(0,0,0,0.1)]
                   hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.2)]
