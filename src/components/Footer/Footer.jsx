@@ -88,7 +88,9 @@ const Footer = () => {
           <div className={`grid grid-cols-2 ml-0 ${i18n.language === 'ar' ? 'relative  ' : 'lg:left-0 left-20'} gap-6 mt-6 `}>
             <AiOutlineLinkedin className={`text-orange-500 text-4xl shrink-0 cursor-pointer lg:mr-4 mr-0 ${i18n.language === 'ar' ? 'relative left-0 lg:left-4 shrink-0 z-10' : ''} hover:text-orange-600`} />
             <FontAwesomeIcon icon={faXTwitter} className="text-orange-500 text-4xl  cursor-pointer hover:text-orange-600" />
+            <a href="https://www.instagram.com/saffarystation/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer">
             <AiOutlineInstagram className={`text-orange-500 text-4xl cursor-pointer mr-0 shrink-0 z-10 relative lg:mr-4 ${i18n.language === 'ar' ? 'relative left-0 lg:left-4 shrink-0 z-10' : ''} hover:text-orange-600 `} />
+           </a>
             <a href="https://www.facebook.com/saffarystation/" target="_blank" rel="noopener noreferrer">
               <AiOutlineFacebook className="text-orange-500 text-4xl cursor-pointer hover:text-orange-600" />
             </a>
@@ -98,10 +100,11 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="border-t border-gray-300 mt-8 pt-4 text-center">
-          <p className="text-gray-600 text-sm">
-            {t("copyright")} © 2025 {t("Saffary")}. {t("allRightsReserved")}
-          </p>
-        </div>
+  <p className="text-gray-600 text-sm">
+    {t("copyright")} © {new Date().getFullYear()} {t("Saffary")}. {t("allRightsReserved")}
+  </p>
+</div>
+
       </footer>
     </div>
   );
