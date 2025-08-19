@@ -80,7 +80,7 @@ const Navbar = () => {
         className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out text-white
           ${ isScrolled
               ? "bg-black/40 backdrop-blur-lg border-b border-white/10 shadow-xl" // Scrolled state: Glass effect
-              : "bg-[#FF7300] bg-transparent border-b border-transparent" // Top of page state: Fully transparent
+              : "bg-[#FF7300]  border-b border-transparent" // Top of page state: Fully transparent
           } 
           ${showNavbar ? "translate-y-0" : "-translate-y-full"}`
         }
