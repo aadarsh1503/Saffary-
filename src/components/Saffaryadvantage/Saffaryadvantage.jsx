@@ -1,85 +1,153 @@
-import React from "react";
-import i1 from "./i1.png";
+import React from 'react';
+import i1 from './i1.png'; // Your central phone image
 import { useTranslation } from 'react-i18next';
-import i18n from "../../i18n";
+import i18n from '../../i18n';
+
+// --- Data for the advantages ---
+// This makes the component much cleaner and easier to update.
+const featuresData = [
+  {
+    id: 1,
+    icon: "https://www.ordercoro.com/assets/Advantage1_coro.png",
+    titleKey: 'find_nearby_merchant_title',
+    descriptionKey: 'find_nearby_merchant_description',
+    align: 'right', // Text will be on the right (for LTR)
+  },
+  {
+    id: 2,
+    icon: "https://www.ordercoro.com/assets/Advantage2_coro.png",
+    titleKey: 'no_commission_title',
+    descriptionKey: 'no_commission_description',
+    align: 'right',
+  },
+  {
+    id: 3,
+    icon: "https://www.ordercoro.com/assets/many.svg",
+    titleKey: 'easy_access_menu_title',
+    descriptionKey: 'easy_access_menu_description',
+    align: 'right',
+  },
+  {
+    id: 4,
+    icon: "https://www.ordercoro.com/assets/Advantage4_coro.png",
+    titleKey: 'eat_now_pay_later_title',
+    descriptionKey: 'eat_now_pay_later_description',
+    align: 'left', // Text will be on the left (for LTR)
+  },
+  {
+    id: 5,
+    icon: "https://www.ordercoro.com/assets/Advantage5_coro.png",
+    titleKey: 'quick_delivery_title',
+    descriptionKey: 'quick_delivery_description',
+    align: 'left',
+  },
+  {
+    id: 6,
+    icon: "https://www.ordercoro.com/assets/BeUpToDate.svg",
+    titleKey: 'explore_title',
+    descriptionKey: 'explore_description',
+    align: 'left',
+  },
+];
+
+// --- A reusable Feature Card component ---
+// This encapsulates the style and logic for each advantage item.
+const FeatureCard = ({ icon, title, description, align, isRTL }) => {
+  // Determine layout based on alignment and language direction
+  const isTextRight = align === 'right';
+  const flexDirection = isRTL
+    ? (isTextRight ? 'flex-row' : 'flex-row-reverse')
+    : (isTextRight ? 'flex-row-reverse' : 'flex-row');
+
+  const textAlign = isRTL ? 'text-right' : 'text-left';
+
+  return (
+    <div
+      className={`
+        group relative flex items-center gap-5 p-5
+        bg-white/60 backdrop-blur-xl border border-white/20
+        rounded-3xl shadow-lg
+        transition-all duration-300 ease-in-out
+        hover:bg-white/80 hover:shadow-2xl hover:scale-105
+        ${flexDirection}
+      `}
+    >
+      {/* Icon with a styled background */}
+      <div className="flex-shrink-0 w-20 h-20 flex items-center justify-center bg-white/70 rounded-2xl shadow-md">
+        <img src={icon} alt={title} className="w-12 h-12" />
+      </div>
+
+      {/* Text Content */}
+      <div className={textAlign}>
+        <h3 className="text-xl font-bold text-gray-800 mb-1">{title}</h3>
+        <p className="text-md text-gray-600 leading-relaxed">{description}</p>
+      </div>
+    </div>
+  );
+};
+
 
 const Saffaryadvantage = () => {
   const { t } = useTranslation();
   const isRTL = i18n.language === 'ar';
 
+  const leftFeatures = featuresData.filter(f => f.align === 'right');
+  const rightFeatures = featuresData.filter(f => f.align === 'left');
+
   return (
-    <div id="advantages" className={`bg-white ${isRTL ? 'text-right' : 'text-left'} py-10 px-5 mb-16 lg:px-20 max-w-7xl mx-auto`}>
-      <h1 className='text-7xl text-white'>{t('hiii')}</h1>
-      <h2 className={`text-center text-2xl lg:text-4xl font-bold mb-10`}>
-        {t('advantages_title')}
-      </h2>
-      <div className="grid grid-cols-1 lg:grid-cols-3 items-center">
-        {/* Left Items - Special text alignment */}
-        <div className="flex flex-col space-y-8">
-          {[1, 2, 3].map((item) => (
-            <div key={item} className={`flex items-center ${isRTL ? 'flex-row-reverse' : ''} space-x-4 space-x-reverse`}>
-              {/* Notice the reversed text alignment here */}
-              <div className={isRTL ? 'text-left' : 'text-right'}>
-                <h3 className="text-xl font-bold mb-2">
-                  {t(item === 1 ? 'find_nearby_merchant_title' : 
-                     item === 2 ? 'no_commission_title' : 
-                     'easy_access_menu_title')}
-                </h3>
-                <p className="text-md text-gray-600">
-                  {t(item === 1 ? 'find_nearby_merchant_description' : 
-                     item === 2 ? 'no_commission_description' : 
-                     'easy_access_menu_description')}
-                </p>
-              </div>
-              <img
-                src={item === 1 ? "https://www.ordercoro.com/assets/Advantage1_coro.png" : 
-                      item === 2 ? "https://www.ordercoro.com/assets/Advantage2_coro.png" : 
-                      "https://www.ordercoro.com/assets/many.svg"}
-                alt={item === 1 ? "Find Nearby Merchant" : 
-                     item === 2 ? "No Commission" : 
-                     "Eat Now & Pay Later"}
-                className="w-20 h-20"
-              />
-            </div>
-          ))}
+    <div id="advantages" className="relative bg-slate-50 overflow-hidden py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto px-5 lg:px-8">
+        {/* Section Header */}
+        <div className={`text-center mb-16 lg:mb-20 ${isRTL ? 'lg:text-right' : 'lg:text-left'}`}>
+          <h2 className="text-3xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
+            {t('advantages_title')}
+          </h2>
+         
         </div>
 
-        {/* Center Image */}
-        <div className="flex justify-center">
-          <img
-            src={i1}
-            alt="Mobile App"
-            className="w-1/2 lg:w-72"
-          />
-        </div>
-
-        {/* Right Items - Normal text alignment */}
-        <div className="flex flex-col space-y-8">
-          {[4, 5, 6].map((item) => (
-            <div key={item} className={`flex items-center ${isRTL ? 'flex-row-reverse' : ''} space-x-4 space-x-reverse`}>
-              <img
-                src={item === 4 ? "https://www.ordercoro.com/assets/Advantage4_coro.png" : 
-                      item === 5 ? "https://www.ordercoro.com/assets/Advantage5_coro.png" : 
-                      "https://www.ordercoro.com/assets/BeUpToDate.svg"}
-                alt={item === 4 ? "Easy Access to Menu" : 
-                     item === 5 ? "Quick Delivery" : 
-                     "Explore"}
-                className="w-20 h-20"
+        {/* Main Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-center">
+          
+          {/* Left Features Column */}
+          <div className="flex flex-col gap-8">
+            {leftFeatures.map((feature) => (
+              <FeatureCard
+                key={feature.id}
+                icon={feature.icon}
+                title={t(feature.titleKey)}
+                description={t(feature.descriptionKey)}
+                align={feature.align}
+                isRTL={isRTL}
               />
-              <div className={isRTL ? 'text-right' : 'text-left'}>
-                <h3 className="text-xl font-bold mb-2">
-                  {t(item === 4 ? 'eat_now_pay_later_title' : 
-                     item === 5 ? 'quick_delivery_title' : 
-                     'explore_title')}
-                </h3>
-                <p className="text-md text-gray-600">
-                  {t(item === 4 ? 'eat_now_pay_later_description' : 
-                     item === 5 ? 'quick_delivery_description' : 
-                     'explore_description')}
-                </p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Center Phone Image with Glow */}
+          <div className="relative flex justify-center order-first lg:order-none px-10">
+            {/* The Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-300 to-amber-400 opacity-20 rounded-full blur-3xl animate-pulse-slow"></div>
+            
+            <img
+              src={i1}
+              alt="Mobile App"
+              className="relative z-10 w-64 lg:w-80 transform transition-transform duration-500 hover:scale-105 drop-shadow-2xl"
+            />
+          </div>
+
+          {/* Right Features Column */}
+          <div className="flex flex-col gap-8">
+            {rightFeatures.map((feature) => (
+              <FeatureCard
+                key={feature.id}
+                icon={feature.icon}
+                title={t(feature.titleKey)}
+                description={t(feature.descriptionKey)}
+                align={feature.align}
+                isRTL={isRTL}
+              />
+            ))}
+          </div>
+
         </div>
       </div>
     </div>

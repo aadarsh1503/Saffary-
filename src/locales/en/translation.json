@@ -150,5 +150,10 @@
   "Form submitted successfully!": "Form submitted successfully!",
 "Saffary":"Saffary",
 "newsletterHeading":"Follow the News",
-"enterYourEmail":"Enter Your Email"
+"enterYourEmail":"Enter Your Email",
+ "callNow": "Call Now",
+  "sendEmail": "Send Email",
+  "newsletterSubtitle":"Join our newsletter for exclusive updates, offers, and insights delivered directly to your inbox.",
+    "ourMission": "Our Mission",
+  "ourVision": "Our Vision"
 }

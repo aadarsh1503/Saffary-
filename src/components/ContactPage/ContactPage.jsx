@@ -1,81 +1,101 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
+import { FiMail, FiPhone, FiMessageSquare, FiMapPin } from "react-icons/fi"; // High-quality, modern icons
 
 const ContactPage = () => {
   const { t } = useTranslation();
+  const isRTL = i18n.language === "ar";
+
+  const contactMethods = [
+  
+    {
+      icon: <FiPhone size={24} />,
+      titleKey: "telephone",
+      mainInfo: "+973 33117441",
+      descriptionKey: "responseTimeTelephone",
+      ctaKey: "callNow",
+      href: "tel:+97333117441",
+    },
+    {
+      icon: <FiMail size={24} />,
+      titleKey: "mail",
+      mainInfo: "info@saffary.com",
+      descriptionKey: "responseTimeMail",
+      ctaKey: "sendEmail",
+      href: "mailto:info@saffary.com",
+    },
+  ];
 
   return (
-    <div id="contact" className={` ${i18n.language === 'ar' ? 'text-right relative lg:right-0  ' : ''}`}>
-      {/* Heading */}
-      <h1 className="text-white">
-        {t("hello")}
-        <li className="text-white">{t("hello")}</li>
-        <li className="text-white">{t("hello")}</li>
-        <li className="text-white">{t("hello")}</li>
-        <li className="text-white">{t("hello")}</li>
-        <li className="text-white">{t("hello")}</li>
-      </h1>
-      <h1 className="text-center text-2xl font-semibold text-gray-800 mb-6">
-        {t("getInTouch")}
-      </h1>
-
-      {/* Map Section */}
-      <div className={``}>
-        <div className={`flex shadow-custom ${i18n.language === 'ar' ? 'text-right relative lg:right-0  ' : ''} rounded-xl flex-col w-4/4 lg:p-0 p-4 mr-0  lg:mr-[180px] lg:ml-[180px] items-center space-y-4 mb-20`}>
-          {/* Map Section */}
-          <iframe
-            title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14435.236249565674!2d50.5237206!3d26.1868843!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49afd0213a19d3%3A0x2f892ffe9e6f0385!2sGlobal%20Vision%20Solutions!5e0!3m2!1sen!2sin!4v1731936574918!5m2!1sen!2sin"
-            width="100%"
-            height="400"
-            className="w-full rounded-xl"
-            allowFullScreen  
-          ></iframe>
-
-          {/* Address Section */}
-          <p className="text-left right-0 p-4 relative lg:right-52 whitespace-normal lg:whitespace-nowrap text-gray-700">
-            {t("address")}
-          </p>
+    <div id="contact" className="bg-slate-50 py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
+            {t("getInTouch")}
+          </h2>
+        
         </div>
-      </div>
 
-      {/* Contact Information Section */}
-      <div className="max-w-4xl mx-auto mb-20 bg-white rounded-lg p-6 space-y-6">
-        {/* Contact Sections */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Chat Section */}
-          <div className="text-center">
-            <h3 className="text-lg font-semibold text-gray-800">{t("chat")}</h3>
-            <p className="text-md text-gray-600">{t("responseTimeChat")}</p>
-            <p className="text-md text-gray-600">{t("hoursChat")}</p>
+        {/* Main Content Grid: Map on the left, Contact cards on the right */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
+          {/* Left Column: Interactive Map */}
+          <div className="lg:col-span-2 relative min-h-[500px] rounded-2xl overflow-hidden shadow-xl group">
+            <iframe
+              title="Google Map"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14435.236249565674!2d50.5237206!3d26.1868843!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49afd0213a19d3%3A0x2f892ffe9e6f0385!2sGlobal%20Vision%20Solutions!5e0!3m2!1sen!2sin!4v1731936574918!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              className="absolute inset-0 w-full h-full border-0 transition-all duration-500 ease-in-out
+                         grayscale contrast-125 group-hover:grayscale-0 group-hover:contrast-100"
+              allowFullScreen
+            ></iframe>
+            {/* Holographic Address Panel */}
+            <div className="absolute bottom-0 left-0 w-full p-6 bg-black/40 backdrop-blur-md">
+              <div className="flex items-start gap-4">
+                <FiMapPin size={28} className="text-white/80 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1">{t('ourLocation')}</h3>
+                  <p className="text-white/90 leading-relaxed">
+                    {t("address")}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Telephone Section */}
-          <div className="text-center">
-  <h3 className="text-lg font-semibold text-gray-800">{t("telephone")}</h3>
-  <a
-    href="tel:+97333117441"
-    className="text-lorange text-lg font-semibold hover:underline"
-    dir="ltr" // Ensures the number is displayed correctly in RTL
-  >
-    +973 33117441
-  </a>
-  <p className="text-md text-gray-600">{t("responseTimeTelephone")}</p>
-  <p className="text-md text-gray-600">{t("hoursTelephone")}</p>
-</div>
-
-          {/* Mail Section */}
-          <div className="text-center">
-            <h3 className="text-lg font-semibold text-gray-800">{t("mail")}</h3>
-            <a
-              href="mailto:info@saffary.com"
-              className="text-lorange text-lg font-semibold hover:underline"
-            >
-              info@saffary.com
-            </a>
-            <p className="text-md text-gray-600">{t("responseTimeMail")}</p>
-            <p className="text-md text-gray-600">{t("hoursMail")}</p>
+          {/* Right Column: Contact Methods */}
+          <div className="lg:col-span-3 flex flex-col gap-6">
+            {contactMethods.map((method) => (
+              <a 
+                key={method.titleKey} 
+                href={method.href}
+                className="block bg-white rounded-2xl p-8 shadow-lg transition-all duration-300
+                           hover:shadow-2xl hover:-translate-y-2 group"
+              >
+                <div className="flex flex-col sm:flex-row items-start gap-6">
+                  <div className="flex-shrink-0 bg-orange-100 text-orange-600 rounded-lg p-4">
+                    {method.icon}
+                  </div>
+                  <div className={`flex-grow ${isRTL ? 'text-right' : 'text-left'}`}>
+                    <h3 className="text-xl font-bold text-gray-800">{t(method.titleKey)}</h3>
+                    <p className="text-lg font-semibold text-orange-600 my-1" dir="ltr">
+                      {method.mainInfo || t(method.mainInfoKey)}
+                    </p>
+                    <p className="text-sm text-gray-500">{t(method.descriptionKey)}</p>
+                  </div>
+                  <div className="mt-4 sm:mt-0 sm:ml-auto rtl:sm:ml-0 rtl:sm:mr-auto">
+                    <span className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md
+                                     text-orange-600 bg-orange-100 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                      {t(method.ctaKey)}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </div>

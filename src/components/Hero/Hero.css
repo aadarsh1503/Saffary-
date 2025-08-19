@@ -1,0 +1,36 @@
+/* Keyframes for the subtle floating animation of the phone */
+@keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  /* Keyframes for the staggered text entrance animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Apply the animations using utility-like classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-fadeInUp {
+    /* Set the initial state to invisible */
+    opacity: 0; 
+    /* The 'forwards' keyword ensures it stays visible after the animation ends */
+    animation: fadeInUp 0.8s ease-out forwards;
+  }

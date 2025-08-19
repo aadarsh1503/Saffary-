@@ -1,94 +1,124 @@
-import React, { useState } from "react";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
+import { FaCalendarAlt } from "react-icons/fa";
+
+// Import the new custom CSS file
+import './OurStory.css';
 
 const OurStory = () => {
   const { t, i18n } = useTranslation();
-  const [isRTL, setIsRTL] = useState(i18n.language === "ar");
+  const isRTL = i18n.language === "ar";
 
+  const storyData = useMemo(() => [
+    { id: 0, date: "Feb 2020", contentKey: "storyContent1" },
+    { id: 1, date: "March 2020", contentKey: "storyContent2" },
+    { id: 2, date: "Dec 2020", contentKey: "storyContent3" },
+    { id: 3, date: "March 2021", contentKey: "storyContent4" },
+    { id: 4, date: "July 2021", contentKey: "storyContent5" },
+    { id: 5, date: "Dec 2021", contentKey: "storyContent6" },
+  ], [t]);
+
+  const [visibleItems, setVisibleItems] = useState(new Set());
+  const itemRefs = useRef(new Map());
+
+  // Set up the Intersection Observer to track which cards are on screen
   useEffect(() => {
-    setIsRTL(i18n.language === "ar");
-    document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
-  }, [i18n.language]);
-
-  const data = [
-    { date: "Feb 2020", content: t("storyContent1") },
-    { date: "March 2020", content: t("storyContent2") },
-    { date: "Dec 2020", content: t("storyContent3") },
-    { date: "March 2021", content: t("storyContent4") },
-    { date: "July 2021", content: t("storyContent5") },
-    { date: "Dec 2021", content: t("storyContent6") },
-  ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex + 3 >= data.length ? 0 : prevIndex + 1
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = parseInt(entry.target.dataset.id, 10);
+            setVisibleItems((prev) => new Set(prev).add(id));
+          }
+        });
+      },
+      { threshold: 0.3 } // Trigger when 30% of the card is visible
     );
-  };
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? data.length - 3 : prevIndex - 1
-    );
-  };
+    const currentRefs = itemRefs.current;
+    currentRefs.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
 
-  const visibleCards = data.slice(currentIndex, currentIndex + 3);
+    return () => {
+      currentRefs.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, [storyData]);
+
+  // Determine the highest visible index for the progress bar
+  const maxVisibleIndex = visibleItems.size > 0 ? Math.max(...Array.from(visibleItems)) : -1;
 
   return (
-    <div id="story" className={`bg-orange-500  ${i18n.language === 'ar' ? 'text-right relative lg:right-0  ' : ''} text-white py-10 px-4`}>
-      <h1 className="text-7xl text-orange-500">{t("hi")}</h1>
+    <div id="story" className="bg-slate-50 py-20 lg:py-24 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div className="text-center mb-16 lg:mb-20">
+          <h2 className="text-3xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
+            {t("storyTitle")}
+          </h2>
+        
+        </div>
 
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-8">{t("storyTitle")}</h2>
-        <div className="flex flex-col -ml-5 lg:-ml-20 mr-0 lg:-mr-20 sm:flex-row items-center justify-between">
-          {/* Previous Button (Hidden on Mobile) */}
-          <div className="hidden sm:block">
-            <button
-              className="text-2xl p-2 bg-white text-orange-500 rounded-full hover:bg-orange-400 hover:text-white transition"
-              onClick={handlePrev}
-            >
-              {isRTL ? (
-                <AiOutlineArrowRight /> // Show right arrow if RTL
-              ) : (
-                <AiOutlineArrowLeft /> // Show left arrow if LTR
-              )}
-            </button>
-          </div>
+        {/* Vertical Timeline Container */}
+        <div className="relative max-w-2xl lg:max-w-4xl mx-auto">
+          {/* The Central Spine */}
+          <div className="absolute left-1/2 -translate-x-1/2 top-2 h-full w-1 bg-gradient-to-b from-orange-400 to-amber-500"></div>
+          <div
+            className="absolute left-1/2 -translate-x-1/2 top-2 h-full w-1 bg-gradient-to-b from-orange-400 to-amber-500 transition-all duration-500 ease-out"
+            style={{ height: `calc(${(maxVisibleIndex / (storyData.length - 1)) * 100}% - 1rem)` }}
+          ></div>
 
-          {/* Story Cards */}
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0 mx-4">
-            {/* Show all cards on mobile */}
-            {(window.innerWidth <= 640 ? data : visibleCards).map((item, index) => (
-              <div
-                key={index}
-                className="bg-white text-orange-500 rounded-lg ml-4 shadow-lg lg:w-[350px] lg:h-[300px] lg:p-4 p-3 sm:w-full h-[400px]"
-              >
-                <div className="flex items-center space-x-2 mb-4">
-                  <span className="bg-lorange text-white font-semibold py-1 px-3 rounded-full text-sm">
-                    • {item.date}
-                  </span>
-                </div>
-                <p className="text-gray-800">{item.content}</p>
-              </div>
-            ))}
-          </div>
+          {/* Timeline Items */}
+          <ul className="space-y-4">
+            {storyData.map((item, index) => {
+              const isVisible = visibleItems.has(item.id);
+              const isEven = index % 2 === 0;
+              const translateX = isEven ? '-20px' : '20px';
 
-          {/* Next Button (Hidden on Mobile) */}
-          <div className="hidden sm:block">
-            <button
-              className="text-2xl p-2 bg-white text-orange-500 rounded-full hover:bg-orange-400 hover:text-white transition"
-              onClick={handleNext}
-            >
-              {isRTL ? (
-                <AiOutlineArrowLeft /> // Show left arrow if RTL
-              ) : (
-                <AiOutlineArrowRight /> // Show right arrow if LTR
-              )}
-            </button>
-          </div>
+              return (
+                <li
+                  key={item.id}
+                  ref={(el) => itemRefs.current.set(item.id, el)}
+                  data-id={item.id}
+                  className={`flex items-center w-full ${isVisible ? 'animate-slide-in' : 'opacity-0'}`}
+                  style={{ '--slide-in-translate-x': translateX }}
+                >
+                  <div className={`w-full flex ${isEven ? 'justify-start' : 'justify-end'}`}>
+                    <div className={`w-full lg:w-[calc(50%-2.5rem)] flex items-center ${isEven ? (isRTL ? 'flex-row-reverse text-right' : 'flex-row text-left') : (isRTL ? 'lg:flex-row text-right' : 'lg:flex-row-reverse text-left')}`}>
+                      
+                      {/* The Card / Display Panel */}
+                      <div className="relative w-full bg-white p-6 shadow-lg rounded-lg border border-slate-200/50
+                                      [clip-path:polygon(0_10px,10px_0,100%_0,100%_calc(100%-10px),calc(100%-10px)_100%,0_100%)]">
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="flex items-center justify-center w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex-shrink-0">
+                            <FaCalendarAlt />
+                          </span>
+                          <span className="font-bold text-md text-gray-800">{item.date}</span>
+                        </div>
+                        <p className="text-gray-600 text-sm leading-relaxed">{t(item.contentKey)}</p>
+                      </div>
+
+                      {/* The Connector Line and Node */}
+                      <div className="hidden lg:flex items-center w-10 mx-2 flex-shrink-0">
+                         <div className={`w-full h-0.5 ${isVisible ? 'bg-orange-500' : 'bg-slate-200'} transition-colors duration-500`}></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Central Node (Hexagon) */}
+                  <div className="absolute left-1/2 -translate-x-1/2 z-10">
+                    <div className={`w-6 h-7 flex items-center justify-center transition-all duration-500
+                                   [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)]
+                                   ${isVisible ? 'bg-orange-500 scale-110' : 'bg-slate-300'}`}>
+                      <div className="w-[20px] h-[24px] bg-slate-50 [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)]"></div>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </div>
