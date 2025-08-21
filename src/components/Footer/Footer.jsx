@@ -18,8 +18,8 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { href: "https://www.linkedin.com/", icon: <FiLinkedin size={20} />, label: "LinkedIn" },
-    { href: "https://twitter.com/", icon: <FiTwitter size={20} />, label: "Twitter" },
+    // { href: "https://www.linkedin.com/", icon: <FiLinkedin size={20} />, label: "LinkedIn" },
+    // { href: "https://twitter.com/", icon: <FiTwitter size={20} />, label: "Twitter" },
     { href: "https://www.instagram.com/saffarystation/", icon: <FiInstagram size={20} />, label: "Instagram" },
     { href: "https://www.facebook.com/saffarystation/", icon: <FiFacebook size={20} />, label: "Facebook" },
   ];

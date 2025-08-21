@@ -12,11 +12,12 @@ import TermsAndConditions from './components/TermsAndConditions/TermsAndConditio
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 import { DirectionProvider } from './components/DirectionContext';
 import MobileNavbar from './components/MobileNavbar/MobileNavbar';
+import useLenis from './hooks/useLenis';
 
 
 function App() {
   const [count, setCount] = useState(0);
-
+  useLenis()
   return (
     <BrowserRouter> {/* Wrap the app with BrowserRouter */}
       <div>
