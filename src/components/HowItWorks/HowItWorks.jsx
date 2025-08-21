@@ -131,7 +131,7 @@ const HowItWorks = () => {
                 <div className="animate-digital-dissolve-in">
                   <div className={`flex items-center gap-3 mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
                     <span className="font-mono text-sm text-orange-600 bg-orange-100 border border-orange-200 px-3 py-1 rounded">
-                      {t('step', { count: activeStep.id }).toUpperCase()}
+                      {t('steps', { count: activeStep.id }).toUpperCase()}
                     </span>
                   </div>
                   <h3 className={`text-2xl font-bold text-gray-800 mb-3 ${isRTL ? 'text-right' : 'text-left'}`}>

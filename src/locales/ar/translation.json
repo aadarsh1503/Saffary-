@@ -70,7 +70,7 @@
   "registerDescription": "سجل نفسك في تطبيق سفّري واختر موقعك من خلال تمكين إذن الموقع أو عن طريق اختيار الوضع اليدوي.",
   "findNearbyMerchant": "ابحث عن متجر قريب",
   "findNearbyMerchantDescription": "إذا كان أي تاجر مرتبطًا بنا، فسيتم إدراجه تحت 'التاجر القريب'.",
-  "howItWorksTitle": "كيف يعمل ذلك؟!",
+"howItWorksTitle": "كيف يعمل ذلك!",
   "provideDeliveryAddress": "قدم عنوانك للتوصيل",
   "provideDeliveryAddressDescription": "في صفحة السلة، سيُطلب منك إدخال عنوان التوصيل الخاص بك. يمكن للعناوين المعتمدة تقديم الطلبات دون الحاجة إلى التحقق.",
   "orderDetailsTrack": "تفاصيل الطلب وتتبع الطلب",
@@ -148,6 +148,13 @@
   "sendEmail": "أرسل بريدًا إلكترونيًا",
   "newsletterSubtitle":"انضم إلى نشرتنا الإخبارية للحصول على تحديثات حصرية وعروض ورؤى يتم إرسالها مباشرة إلى صندوق بريدك.",
   "ourMission": "مهمتنا",
-  "ourVision": "رؤيتنا"
+  "ourVision": "رؤيتنا",
+   "ourLocation": "موقعنا",
+     "whatsapp": "واتساب",
+  "chatNow": "دردش الآن",
+  "february": "فبراير",
+  "march": "مارس",
+  "december": "ديسمبر",
+  "july": "يوليو"
 
 }

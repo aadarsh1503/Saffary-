@@ -61,10 +61,10 @@
   "hi": "hiii",
   "storyTitle": "Our Story",
   
-    "storyContent1": "In 2020, our founder had an accident with a local coffee shop vendor because he couldn't deliver tea and drinks to our office on time. That same day, the founder asked the vendor about his issues and decided to build a technology-based platform for him so he could manage his deliveries seamlessly",
+    "storyContent1": "In 2020, our founder had an accident with a local coffee shop vendor because he couldn't deliver tea and drinks to our office on time. That same day, the founder asked the vendor about his issues and decided to build a technology-based platform for him so he could manage his deliveries seamlessly.",
     "storyContent2": "As soon as Saeed started to develop the plan, the COVID-19 pandemic hit the global market and almost all offices closed. But the café problem was so real that Saeed started working on its planning even during the COVID times.",
-    "storyContent3": "Saeed wanted to choose a simple and memorable brand name, and one day he came across a very popular word in the times of Covid 'Corona', hence he planned to name this product 'Saffari' and gave the slogan 'Saffari, ask for Safari to take it!'",
-    "storyContent4": "When Saeed was working on this product, he realized that this is a common problem for everyone who goes to the office daily, and if they want to order anything with their tea/coffee, they have no choice but to call local merchants and ask for the product to be delivered to their offices",
+    "storyContent3": "Saeed wanted to choose a simple and memorable brand name, and one day he came across a very popular word in the times of Covid 'Corona', hence he planned to name this product 'Saffari' and gave the slogan 'Saffari, ask for Safari to take it .",
+    "storyContent4": "When Saeed was working on this product, he realized that this is a common problem for everyone who goes to the office daily, and if they want to order anything with their tea/coffee, they have no choice but to call local merchants and ask for the product to be delivered to their offices.",
     "storyContent5": "Given all these factors, we decided to focus on instant food delivery with tea and coffee.",
     "storyContent6": "In December 2021, most of the offices were up and running, and we were also ready with the initial version of the mobile app. We started reaching out to local merchants to onboard them to our platform. Unfortunately, given the new concept, no merchants showed interest in our product, and we weren't able to onboard any until mid-February 2022.",
   
@@ -74,7 +74,7 @@
   "registerDescription": "Register yourself on the Saffary app and choose your location by enabling location permission or by choosing manual.",
   "findNearbyMerchant": "Find Nearby Merchant",
   "findNearbyMerchantDescription": "If any merchant is associated with us, they will be listed under 'Nearby Merchant'.",
-  "howItWorksTitle": "How does it work?!",
+  "howItWorksTitle": "How does it work ?",
   "requestDemo": "Request a Demo",
   "provideDeliveryAddress": "Provide your delivery address",
   "provideDeliveryAddressDescription": "On the cart page, you will be asked to enter your delivery address. Verified addresses can place orders without validation.",
@@ -155,5 +155,12 @@
   "sendEmail": "Send Email",
   "newsletterSubtitle":"Join our newsletter for exclusive updates, offers, and insights delivered directly to your inbox.",
     "ourMission": "Our Mission",
-  "ourVision": "Our Vision"
+  "ourVision": "Our Vision",
+  "ourLocation": "Our Location",
+   "whatsapp": "WhatsApp",
+  "chatNow": "Chat Now",
+  "february": "Feb",
+  "march": "March",
+  "december": "Dec",
+  "july": "July"
 }

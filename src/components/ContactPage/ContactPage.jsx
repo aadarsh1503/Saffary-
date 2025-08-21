@@ -1,27 +1,27 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
-import { FiMail, FiPhone, FiMessageSquare, FiMapPin } from "react-icons/fi"; // High-quality, modern icons
+import { FiMail, FiMessageCircle, FiMapPin } from "react-icons/fi"; // Changed icon for WhatsApp
+import { FaWhatsapp } from "react-icons/fa";
 
 const ContactPage = () => {
   const { t } = useTranslation();
   const isRTL = i18n.language === "ar";
 
   const contactMethods = [
-  
     {
-      icon: <FiPhone size={24} />,
-      titleKey: "telephone",
+      icon: <FaWhatsapp size={24} />, // WhatsApp-style icon
+      titleKey: "whatsapp",
       mainInfo: "+973 33117441",
-      descriptionKey: "responseTimeTelephone",
-      ctaKey: "callNow",
-      href: "tel:+97333117441",
+      description: "Available on WhatsApp", // custom text instead of translation
+      ctaKey: "chatNow", // custom CTA
+      href: "https://wa.me/97333117441", // WhatsApp link
     },
     {
       icon: <FiMail size={24} />,
       titleKey: "mail",
       mainInfo: "info@saffary.com",
-      descriptionKey: "responseTimeMail",
+      description: "Response time: 1 hour", // fixed 1 hour
       ctaKey: "sendEmail",
       href: "mailto:info@saffary.com",
     },
@@ -36,7 +36,6 @@ const ContactPage = () => {
           <h2 className="text-3xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
             {t("getInTouch")}
           </h2>
-        
         </div>
 
         {/* Main Content Grid: Map on the left, Contact cards on the right */}
@@ -73,6 +72,8 @@ const ContactPage = () => {
               <a 
                 key={method.titleKey} 
                 href={method.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block bg-white rounded-2xl p-8 shadow-lg transition-all duration-300
                            hover:shadow-2xl hover:-translate-y-2 group"
               >
@@ -81,11 +82,15 @@ const ContactPage = () => {
                     {method.icon}
                   </div>
                   <div className={`flex-grow ${isRTL ? 'text-right' : 'text-left'}`}>
-                    <h3 className="text-xl font-bold text-gray-800">{t(method.titleKey)}</h3>
+                    <h3 className="text-xl font-bold text-gray-800">
+                      {t(method.titleKey)}
+                    </h3>
                     <p className="text-lg font-semibold text-orange-600 my-1" dir="ltr">
-                      {method.mainInfo || t(method.mainInfoKey)}
+                      {method.mainInfo}
                     </p>
-                    <p className="text-sm text-gray-500">{t(method.descriptionKey)}</p>
+                    <p className="text-sm text-gray-500">
+                      {method.description}
+                    </p>
                   </div>
                   <div className="mt-4 sm:mt-0 sm:ml-auto rtl:sm:ml-0 rtl:sm:mr-auto">
                     <span className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md

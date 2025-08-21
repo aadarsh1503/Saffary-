@@ -10,13 +10,14 @@ const OurStory = () => {
   const isRTL = i18n.language === "ar";
 
   const storyData = useMemo(() => [
-    { id: 0, date: "Feb 2020", contentKey: "storyContent1" },
-    { id: 1, date: "March 2020", contentKey: "storyContent2" },
-    { id: 2, date: "Dec 2020", contentKey: "storyContent3" },
-    { id: 3, date: "March 2021", contentKey: "storyContent4" },
-    { id: 4, date: "July 2021", contentKey: "storyContent5" },
-    { id: 5, date: "Dec 2021", contentKey: "storyContent6" },
+    { id: 0, date: `${t("february")} 2020`, contentKey: "storyContent1" },
+    { id: 1, date: `${t("march")} 2020`, contentKey: "storyContent2" },
+    { id: 2, date: `${t("december")} 2020`, contentKey: "storyContent3" },
+    { id: 3, date: `${t("march")} 2021`, contentKey: "storyContent4" },
+    { id: 4, date: `${t("july")} 2021`, contentKey: "storyContent5" },
+    { id: 5, date: `${t("december")} 2021`, contentKey: "storyContent6" },
   ], [t]);
+  
 
   const [visibleItems, setVisibleItems] = useState(new Set());
   const itemRefs = useRef(new Map());
