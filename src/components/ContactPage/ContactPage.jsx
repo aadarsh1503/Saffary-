@@ -13,7 +13,7 @@ const ContactPage = () => {
       icon: <FaWhatsapp size={24} />, // WhatsApp-style icon
       titleKey: "whatsapp",
       mainInfo: "+973 33117441",
-      description: "Available on WhatsApp", // custom text instead of translation
+      description: t("availableOnWhatsApp"), // custom text instead of translation
       ctaKey: "chatNow", // custom CTA
       href: "https://wa.me/97333117441", // WhatsApp link
     },
@@ -21,7 +21,7 @@ const ContactPage = () => {
       icon: <FiMail size={24} />,
       titleKey: "mail",
       mainInfo: "info@saffary.com",
-      description: "Response time: 1 hour", // fixed 1 hour
+      description: t("responseTime"),
       ctaKey: "sendEmail",
       href: "mailto:info@saffary.com",
     },
