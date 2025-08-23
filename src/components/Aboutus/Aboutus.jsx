@@ -1,8 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import g1 from "./g1.png"; // Your image
+// 1. Import both your LTR and RTL images
+import g1 from "./g1.png"; // Your default/LTR image
+import g11 from "./g11.png"; // Your new RTL image (you need to create this file)
 import i18n from '../../i18n';
-import { FiTrendingUp, FiEye } from "react-icons/fi"; 
+import { FiTrendingUp, FiEye } from "react-icons/fi";
 
 // NO CHANGES NEEDED IN THIS COMPONENT. IT'S ALREADY CORRECT.
 const PillarCard = ({ icon, title, text, isRTL }) => {
@@ -24,15 +26,12 @@ const Aboutus = () => {
   const { t } = useTranslation();
   const isRTL = i18n.language === 'ar';
 
-  // === THIS IS THE SECTION TO FIX ===
-  // Add the className directly to the icon components here.
   const pillars = [
     {
       icon: (
-        <FiTrendingUp 
-          size={24} 
-          // Example: Add a custom class based on the language direction
-          className="transform hover:scale-125 transition-transform" 
+        <FiTrendingUp
+          size={24}
+          className="transform hover:scale-125 transition-transform"
         />
       ),
       titleKey: 'ourMission',
@@ -40,17 +39,15 @@ const Aboutus = () => {
     },
     {
       icon: (
-        <FiEye 
-          size={24} 
-          // You can add static classes too, or different logic for each icon
-          className="transform hover:scale-125 transition-transform" 
+        <FiEye
+          size={24}
+          className="transform hover:scale-125 transition-transform"
         />
       ),
       titleKey: 'ourVision',
       textKey: 'conceptValidation'
     }
   ];
-  // ================================
 
   return (
     <section id='about' className="bg-slate-50 py-20 lg:py-24">
@@ -71,7 +68,7 @@ const Aboutus = () => {
               {pillars.map(pillar => (
                 <PillarCard
                   key={pillar.titleKey}
-                  icon={pillar.icon} // The fully-styled icon is passed here
+                  icon={pillar.icon}
                   title={t(pillar.titleKey)}
                   text={t(pillar.textKey)}
                   isRTL={isRTL}
@@ -82,13 +79,13 @@ const Aboutus = () => {
           </div>
 
           <div className="relative h-96 lg:h-[500px] flex items-center justify-center">
-            {/* ... rest of the component is unchanged ... */}
             <div className="absolute inset-0 bg-slate-200/80 [clip-path:polygon(0_20px,20px_0,100%_0,100%_calc(100%-20px),calc(100%-20px)_100%,0_100%)]"></div>
             <div className="absolute inset-1.5 bg-white [clip-path:polygon(0_20px,20px_0,100%_0,100%_calc(100%-20px),calc(100%-20px)_100%,0_100%)]
                           p-6 bg-[linear-gradient(to_right,rgba(203,213,225,0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(203,213,225,0.2)_1px,transparent_1px)] 
                           bg-[size:2rem_2rem]">
-              <img 
-                src={g1} 
+              {/* 2. Use a ternary operator to choose the image source */}
+              <img
+                src={isRTL ? g11 : g1}
                 alt={t('aboutSaffary')}
                 className="w-full h-full object-cover rounded-lg"
               />

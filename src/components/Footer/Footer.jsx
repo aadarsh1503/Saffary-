@@ -146,7 +146,7 @@ const Footer = () => {
 
             {/* Right Section: Social Media */}
             <div className="lg:justify-self-center">
-              <h4 className="text-lg font-bold text-gray-900 mb-6">{t('followUs', 'Follow Us')}</h4>
+              <h4 className="text-lg font-bold text-gray-900 mb-6">{t('followUs')}</h4>
               <div className="flex items-center gap-4">
                 {socialLinks.map(link => (
                   <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}
